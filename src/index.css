@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
+
+@theme {
+  --color-brand: #f47b20;
+  --font-display: "Boldonse" , system-ui; 
+}
+
+body {
+  @apply bg-neutral-950 text-gray-100;
+  margin: 0; /* prevents a white gap */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin { animation: none !important; }
+  .transition-opacity { transition: none !important; }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+

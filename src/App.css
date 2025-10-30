@@ -1,0 +1,102 @@
+:root {
+  --bg: #0f172a;          /* deep slate */
+  --bg-2: #111827;        /* slightly lighter */
+  --text: #e5e7eb;        /* light gray */
+  --muted: #9ca3af;       /* muted gray */
+  --accent: #60a5fa;      /* blue */
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: var(--text);
+  background: #0b1022 linear-gradient(180deg, #0b1022 0%, #0a0f1d 100%);
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(180deg, var(--bg), var(--bg-2));
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: saturate(140%) blur(8px);
+}
+
+.navbar__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__brand {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  font-size: 1.1rem;
+}
+
+.navbar__links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__link {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  transition: color 150ms ease, background 150ms ease, transform 120ms ease;
+}
+
+.navbar__link:hover,
+.navbar__link:focus {
+  color: var(--text);
+  background: rgba(96, 165, 250, 0.12);
+  outline: none;
+}
+
+.navbar__link:active {
+  transform: translateY(1px);
+}
+
+/* Sections */
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6rem 1rem;
+}
+
+.section--alt {
+  background: rgba(255,255,255,0.02);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+}
+
+p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Smooth anchor scrolling */
+html { scroll-behavior: smooth; }
+
+/* Small screens */
+@media (max-width: 640px) {
+  .navbar__links { gap: 0.5rem; }
+  .navbar__link { padding: 0.35rem 0.5rem; }
+}

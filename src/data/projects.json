@@ -1,0 +1,90 @@
+[
+    {
+    "id": "chen-lab-page",
+    "title": "Dr. Zhu-tian Chen’s Research Lab Website",
+    "dates": "May 2025 – Present",
+    "stack": ["React", "Typescript", "Tailwind", "Git"],
+    "summary": "Dr. Zhu-Tian Chen ",
+    "bullets": [
+      "Initiated and set up the website build for Dr. Chen's lab at the University of Minnesota.",
+      "Literature reviews on decision-making theories and risk perception."
+    ],
+    "coverImage": "/img/projects/zhutian-chen-page.png",
+    "links": {
+      "repo": null,
+      "demo": null,
+      "doc": null
+    },
+    "tags": ["Front-end", "Application"]
+  },
+  {
+    "id": "chen-lab",
+    "title": "Dr. Zhu-tian Chen’s Research Lab",
+    "dates": "May 2025 – Present",
+    "stack": ["Research", "AR", "Mobile", "Human-AI Interaction"],
+    "summary": "Investigating how interface design (AR vs. mobile) affects user decision-making and reliance on AI.",
+    "bullets": [
+      "Lead experimental design on decision context, risk level, and interface modality.",
+      "Literature reviews on decision-making theories and risk perception."
+    ],
+    "coverImage": "/img/projects/ar_decisionmaking.jpg",
+    "links": {
+      "repo": null,
+      "demo": null,
+      "doc": null
+    },
+    "tags": ["Research", "HCI", "AR"]
+  },
+  {
+    "id": "ar-juggling",
+    "title": "AR for Task Learning & Muscle Memory",
+    "dates": "Sep. 2024 – Jan. 2025",
+    "stack": ["AR", "HCI", "Cognitive Science"],
+    "summary": "AR-based app for teaching juggling; measuring transfer from virtual to physical skill.",
+    "bullets": [
+      "Designed user study and instrumentation.",
+      "Explored slowed-down virtual trajectories for motor learning."
+    ],
+    "coverImage": "/img/projects/jugglar.png",
+    "links": {
+      "repo": null,
+      "demo": null,
+      "doc": null
+    },
+    "tags": ["AR", "Research"]
+  },
+  {
+    "id": "graco-cloud",
+    "title": "Graco — Cloud Migration",
+    "dates": "May 2022 – Nov. 2023",
+    "stack": ["Java", "JavaScript", "AEM Cloud", "CSS"],
+    "summary": "Migrating legacy product to AEM Cloud; coordinating with PMs for requirements & rollout.",
+    "bullets": [
+      "Collaborated with product managers on scope & milestones."
+    ],
+    "coverImage": "/img/projects/graco-migration.png",
+    "links": {
+      "repo": null,
+      "demo": null,
+      "doc": null
+    },
+    "tags": ["Full-stack", "Cloud", "Application"]
+  },
+    {
+    "id": "modus-frontend",
+    "title": "Modus — Web Application",
+    "dates": "May 2021 – Aug. 2022",
+    "stack": ["HTML", "JavaScript", "CSS", "Knockout"],
+    "summary": "Developing a platform for easy access to content, buyer engagement tools, and just-in-time learning",
+    "bullets": [
+      "Built user-facing pages, and fixed bugs."
+    ],
+    "coverImage": "/img/projects/modus-project.png",
+    "links": {
+      "repo": null,
+      "demo": null,
+      "doc": null
+    },
+    "tags": ["Full-stack", "Front-end", "Application"]
+  }
+]
