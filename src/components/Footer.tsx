@@ -7,7 +7,7 @@ export default function Footer() {
         {/* Left side: Brand */}
         <a href="#home" className="flex items-center gap-2 text-white font-semibold tracking-wide">
           <img
-            src="/logo/amandahelga_logo.PNG"
+            src="/logo/amandahelga_logo.png"
             alt="amandahelga logo"
             className="h-6 w-6 object-contain"
           />
