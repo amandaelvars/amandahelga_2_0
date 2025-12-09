@@ -16,7 +16,7 @@ export default function Loader({ visible }: LoaderProps) {
         >
             {/* Spinning logo */}
             <img
-                src="/logo/amandahelga_logo.PNG"
+                src="/logo/amandahelga_logo.png"
                 alt="Loading"
                 className="h-16 w-16 animate-spin-slow"
             />

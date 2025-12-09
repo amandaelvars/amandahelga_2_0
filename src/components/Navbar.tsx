@@ -57,7 +57,7 @@ export default function Navbar() {
           onClick={handleLinkClick}
         >
           <img
-            src="/logo/amandahelga_logo.PNG"
+            src="/logo/amandahelga_logo.png"
             alt="amandahelga logo"
             className="h-8 w-8 object-contain"
           />

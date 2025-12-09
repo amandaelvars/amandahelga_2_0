@@ -1,10 +1,49 @@
 [
-    {
+  {
+    "id": "citation-ai-visualization",
+    "title": "SourceLens: LLM-Based Assistant for Paper Reading",
+    "dates": "September 2025 – Present",
+    "stack": [
+      "React",
+      "Typescript",
+      "Tailwind",
+      "Git",
+      "Grobid",
+      "Gemini API"
+    ],
+    "summary": "A CSCI 8615 project that unifies paper reading, citation exploration, and LLM evidence in a single interactive canvas.",
+    "bullets": [
+      "Designed the full interface layout and interaction flow through iterative sketches and UI prototypes.",
+      "Conducted user research by observing a participant using the app and identifying usability improvements for a more intuitive experience.",
+      "Built the keyword filter feature, enabling users to click a keyword and instantly surface all references containing it.",
+      "Implemented the favorites system for saving papers users want to revisit later.",
+      "Created the overview panel, allowing users to quickly browse all paper sections and jump directly to any chapter."
+    ],
+    "coverImage": "/img/projects/citation-ai-preview.jpg",
+    "links": {
+      "repo": null,
+      "demo": null,
+      "doc": null
+    },
+    "tags": [
+      "Front-end",
+      "Application",
+      "School Project",
+      "AI",
+      "Visualization"
+    ]
+  },
+  {
     "id": "chen-lab-page",
     "title": "Dr. Zhu-tian Chen’s Research Lab Website",
     "dates": "May 2025 – Present",
-    "stack": ["React", "Typescript", "Tailwind", "Git"],
-    "summary": "Dr. Zhu-Tian Chen ",
+    "stack": [
+      "React",
+      "Typescript",
+      "Tailwind",
+      "Git"
+    ],
+    "summary": "Dr. Zhu-Tian Chen lab website",
     "bullets": [
       "Initiated and set up the website build for Dr. Chen's lab at the University of Minnesota.",
       "Literature reviews on decision-making theories and risk perception."
@@ -15,13 +54,21 @@
       "demo": null,
       "doc": null
     },
-    "tags": ["Front-end", "Application"]
+    "tags": [
+      "Front-end",
+      "Application"
+    ]
   },
   {
     "id": "chen-lab",
-    "title": "Dr. Zhu-tian Chen’s Research Lab",
+    "title": "Dr. Zhu-Tian Chen’s Research Lab",
     "dates": "May 2025 – Present",
-    "stack": ["Research", "AR", "Mobile", "Human-AI Interaction"],
+    "stack": [
+      "Research",
+      "AR",
+      "Mobile",
+      "Human-AI Interaction"
+    ],
     "summary": "Investigating how interface design (AR vs. mobile) affects user decision-making and reliance on AI.",
     "bullets": [
       "Lead experimental design on decision context, risk level, and interface modality.",
@@ -33,13 +80,21 @@
       "demo": null,
       "doc": null
     },
-    "tags": ["Research", "HCI", "AR"]
+    "tags": [
+      "Research",
+      "HCI",
+      "AR"
+    ]
   },
   {
     "id": "ar-juggling",
     "title": "AR for Task Learning & Muscle Memory",
     "dates": "Sep. 2024 – Jan. 2025",
-    "stack": ["AR", "HCI", "Cognitive Science"],
+    "stack": [
+      "AR",
+      "HCI",
+      "Cognitive Science"
+    ],
     "summary": "AR-based app for teaching juggling; measuring transfer from virtual to physical skill.",
     "bullets": [
       "Designed user study and instrumentation.",
@@ -51,13 +106,21 @@
       "demo": null,
       "doc": null
     },
-    "tags": ["AR", "Research"]
+    "tags": [
+      "AR",
+      "Research"
+    ]
   },
   {
     "id": "graco-cloud",
     "title": "Graco — Cloud Migration",
     "dates": "May 2022 – Nov. 2023",
-    "stack": ["Java", "JavaScript", "AEM Cloud", "CSS"],
+    "stack": [
+      "Java",
+      "JavaScript",
+      "AEM Cloud",
+      "CSS"
+    ],
     "summary": "Migrating legacy product to AEM Cloud; coordinating with PMs for requirements & rollout.",
     "bullets": [
       "Collaborated with product managers on scope & milestones."
@@ -68,13 +131,22 @@
       "demo": null,
       "doc": null
     },
-    "tags": ["Full-stack", "Cloud", "Application"]
+    "tags": [
+      "Full-stack",
+      "Cloud",
+      "Application"
+    ]
   },
-    {
+  {
     "id": "modus-frontend",
     "title": "Modus — Web Application",
     "dates": "May 2021 – Aug. 2022",
-    "stack": ["HTML", "JavaScript", "CSS", "Knockout"],
+    "stack": [
+      "HTML",
+      "JavaScript",
+      "CSS",
+      "Knockout"
+    ],
     "summary": "Developing a platform for easy access to content, buyer engagement tools, and just-in-time learning",
     "bullets": [
       "Built user-facing pages, and fixed bugs."
@@ -85,6 +157,10 @@
       "demo": null,
       "doc": null
     },
-    "tags": ["Full-stack", "Front-end", "Application"]
+    "tags": [
+      "Full-stack",
+      "Front-end",
+      "Application"
+    ]
   }
 ]
