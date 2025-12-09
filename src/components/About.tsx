@@ -1,5 +1,36 @@
 import React, { useEffect, useRef, useState } from "react";
 
+function SpacedLabel({
+  text,
+  color,
+}: {
+  text: string;
+  color: string;
+}) {
+  return (
+    <div
+      className="
+        uppercase font-extrabold 
+        font-display leading-[1]
+        whitespace-nowrap
+        flex justify-between
+        text-[clamp(18px,6cqw,32px)] md:text-[clamp(22px,7cqw,40px)] lg:text-[clamp(28px,8cqw,56px)]
+        [container-type:inline-size]
+      "
+      style={{ color }}
+    >
+      {text.split("").map((ch, i) => (
+        <span
+          key={i}
+          className="inline-block"
+        >
+          {ch === " " ? "\u00A0" : ch}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
   const lastScrollY = useRef<number>(0);
@@ -73,12 +104,7 @@ export default function About() {
               />
             </div>
             <figcaption className="mt-4 font-display leading-[1] [container-type:inline-size]">
-              <div
-                className="uppercase font-extrabold text-[clamp(28px,8cqw,56px)] md:text-[19px] lg:text-[clamp(28px,8cqw,56px)] tracking-[0.57em]"
-                style={{ color: "#614f41" }}
-              >
-                RESEARCHER
-              </div>
+              <SpacedLabel text="RESEARCHER" color="#614f41" />
             </figcaption>
           </figure>
 
@@ -93,12 +119,7 @@ export default function About() {
               />
             </div>
             <figcaption className="mt-4 font-display leading-[1] [container-type:inline-size]">
-              <div
-                className="uppercase font-extrabold text-[clamp(28px,8cqw,56px)] md:text-[19px] lg:text-[clamp(28px,8cqw,56px)] tracking-[0.01em]"
-                style={{ color: "#838fa4" }}
-              >
-                SOFTWARE ENGINEER
-              </div>
+              <SpacedLabel text="SOFTWARE ENGINEER" color="#838fa4" />
             </figcaption>
           </figure>
 
@@ -113,14 +134,12 @@ export default function About() {
               />
             </div>
             <figcaption className="mt-4 font-display leading-[1] [container-type:inline-size]">
-              <div
-                className="uppercase font-extrabold text-[clamp(28px,8cqw,56px)] md:text-[19px] lg:text-[clamp(28px,8cqw,56px)] tracking-[0.533em]"
-                style={{ color: "#e8d157" }}
-              >
-                WEB DESIGN
-              </div>
+              <SpacedLabel text="WEB DESIGN" color="#e8d157" />
             </figcaption>
           </figure>
+
+
+
         </div>
       </section>
 
