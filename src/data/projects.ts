@@ -13,6 +13,10 @@ export type Project = {
     summary?: string;
     bullets?: string[];
     coverImage?: string;
+    /** Optional 4:3 image for the portfolio card when the cover is a different shape. */
+    cardImage?: string;
+    /** Optional caption shown under the cover on the project page. */
+    coverCaption?: string;
     links?: LinkSet;
     tags?: string[];
     /** Optional long-form content for the project page. */

@@ -47,7 +47,7 @@ export default function ProjectDetail() {
             {/* Header */}
             <header className="mt-6">
                 <div className="text-sm text-muted">{project.dates}</div>
-                <h1 className="mt-1 text-3xl md:text-4xl font-bold tracking-tight text-accent">
+                <h1 className="mt-1 text-3xl md:text-4xl font-bold tracking-tight">
                     {project.title}
                 </h1>
                 {!!project.tags?.length && (
@@ -66,9 +66,18 @@ export default function ProjectDetail() {
 
             {/* Cover */}
             {project.coverImage && (
-                <div className="mt-8 overflow-hidden rounded-xl border border-line bg-surface">
-                    <img src={project.coverImage} alt={`${project.title} screenshot`} className="w-full h-auto" />
-                </div>
+                <figure className="mt-8">
+                    <div className="overflow-hidden rounded-xl border border-line bg-surface">
+                        <img
+                            src={project.coverImage}
+                            alt={project.coverCaption ?? `${project.title} screenshot`}
+                            className="w-full h-auto"
+                        />
+                    </div>
+                    {project.coverCaption && (
+                        <figcaption className="mt-2 text-sm text-muted">{project.coverCaption}</figcaption>
+                    )}
+                </figure>
             )}
 
             {/* Links */}

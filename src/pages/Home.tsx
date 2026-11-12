@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import About from "../components/About";
 
 export default function Home() {
   const wrapRef = useRef<HTMLDivElement>(null);
-  const bgRef = useRef<HTMLImageElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
   const boatWrapRef = useRef<HTMLDivElement>(null);
-  const cloudsRef = useRef<HTMLImageElement>(null);
+  const cloudsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const wrap = wrapRef.current;
@@ -79,24 +79,40 @@ export default function Home() {
           className="relative w-full h-[40vh] md:h-[60vh] overflow-hidden rounded-xl mt-10 md:mt-16 shadow-media"
           aria-label="Hero"
         >
-          {/* LAYER 1: BACKGROUND SKY (panning) */}
-          <img
+          {/* LAYER 1: BACKGROUND SKY (panning).
+              Dark and light skies are stacked; CSS shows the one for the current theme. */}
+          <div
             ref={bgRef}
-            src="/img/hero-background.webp"
-            alt="Sky gradient"
-            className="absolute inset-0 w-full object-cover will-change-transform z-0"
+            className="absolute inset-x-0 top-0 h-full will-change-transform z-0"
             style={{ transform: "translateY(0)" }}
-            fetchPriority="high"
-          />
+          >
+            <img
+              src="/img/hero-background.webp"
+              alt=""
+              className="dark-only absolute inset-0 h-full w-full object-cover"
+              fetchPriority="high"
+            />
+            <img
+              src="/img/hero-background-light.webp"
+              alt=""
+              className="light-only absolute inset-0 h-full w-full object-cover"
+              fetchPriority="high"
+            />
+          </div>
 
           {/* LAYER 2: CLOUDS (behind town, moves up-right) */}
-          <img
+          <div
             ref={cloudsRef}
-            src="/img/clouds.webp"
-            alt="Clouds"
-            className="absolute top-15 left-0 sm:left-15 md:left-35 md:top-15 lg:top-[-35px] w-[58%] md:w-[38%] max-w-none object-contain pointer-events-none select-none z-10"
+            className="absolute top-15 left-0 sm:left-15 md:left-35 md:top-15 lg:top-[-35px] w-[58%] md:w-[38%] pointer-events-none select-none z-10"
             style={{ transform: "translate(0px, 0px)" }}
-          />
+          >
+            <img src="/img/clouds.webp" alt="" className="dark-only block w-full max-w-none object-contain" />
+            <img
+              src="/img/clouds-light.webp"
+              alt=""
+              className="light-only absolute inset-0 h-full w-full max-w-none object-contain"
+            />
+          </div>
 
           {/* LAYER 3: TOWN (static) */}
           <img

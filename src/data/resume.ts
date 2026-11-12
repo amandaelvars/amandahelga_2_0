@@ -204,8 +204,15 @@ export const resume: Section[] = [
                 location: "Minneapolis, MN",
                 role: "Graduate Researcher",
                 dates: "May 2025 – May 2026",
-                link: "/portfolio/chen-lab",
                 bullets: [
+                    b(
+                        "Co-first author of an AR study (N = 32) on whether contextual information in physical environments helps people make better decisions with fallible AI; accepted to IEEE AIxVR 2027.",
+                        "Research",
+                        "HCI",
+                        "AR",
+                        "Decision-Making",
+                        "Responsible AI",
+                    ),
                     b(
                         "Investigated how interface design (AR vs. mobile) affects user decision-making and reliance on AI.",
                         "Research",
@@ -258,6 +265,13 @@ export const resume: Section[] = [
     {
         title: "Publications",
         entries: [
+            {
+                org: "How Contextual Information in Physical Environments Shapes Decisions with AI",
+                role: "O. Elgohary*, A. Elvarsdóttir*, V. Lee, Z. Chen. *Equal contribution.",
+                dates: "IEEE AIxVR 2027 (accepted)",
+                link: "/portfolio/contextual-ai-ar",
+                skills: ["Research", "HCI", "AR", "Decision-Making", "Responsible AI"],
+            },
             {
                 org: "JugglAR: Exploring Mixed Reality for Enhanced Task Learning and Muscle Memory Formation",
                 role: "H. Chandirasekar*, A. Elvarsdóttir*, A. Purohit, D. Blundell, Z. Chen. *Equal contribution.",

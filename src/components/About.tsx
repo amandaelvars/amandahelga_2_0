@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import ThemeImage from "./ThemeImage";
 
 function SpacedLabel({
   text,
@@ -111,10 +112,11 @@ export default function About() {
           {/* Tile 2 */}
           <figure className="flex flex-col">
             <div className="group relative aspect-square w-full overflow-hidden rounded-xl bg-surface shadow-media">
-              <img
-                src="/img/software-engineer.webp"
+              <ThemeImage
+                dark="/img/software-engineer.webp"
+                light="/img/software-engineer-light.webp"
                 alt="Software Engineer"
-                className="w-full h-full object-cover transition-transform duration-500"
+                className="h-full w-full"
                 loading="lazy"
               />
             </div>
@@ -145,11 +147,11 @@ export default function About() {
 
       {/* --- About Me Section --- */}
       <section id="about" className="scroll-mt-20 mx-auto max-w-6xl px-4 py-12 md:py-20">
-        <div className="relative overflow-hidden rounded-3xl border border-accent/10 bg-card-warm p-6 sm:p-10 md:p-12">
+        <div className="tone-dusk relative overflow-hidden rounded-3xl border border-accent/10 bg-card-warm p-6 sm:p-10 md:p-12">
           {/* Soft warm glows, using the tile label colors */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -top-32 -right-24 h-80 w-80 rounded-full bg-gold/10 blur-3xl"
+            className="pointer-events-none absolute -top-32 -right-24 h-80 w-80 rounded-full bg-gold/15 blur-3xl"
           />
           <div
             aria-hidden="true"
@@ -170,10 +172,12 @@ export default function About() {
             </div>
 
             {/* Text */}
-            <div>
+            <div className="[container-type:inline-size]">
               <p className="text-sm uppercase tracking-[0.25em] text-gold">About me</p>
-              <h2 className="mt-3 font-display text-2xl leading-snug md:text-3xl text-accent">
-                From Akureyri to Minneapolis
+              {/* Scales with the text column so it fits on one line where there's room;
+                  on narrow screens it wraps onto two balanced lines */}
+              <h2 className="mt-3 font-display text-[clamp(1.5rem,4.7cqi,1.875rem)] leading-snug text-balance text-accent">
+                Where people meet technology
               </h2>
 
               <p className="mt-6 text-lg leading-relaxed text-body">

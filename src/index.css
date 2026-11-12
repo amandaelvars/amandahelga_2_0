@@ -7,7 +7,7 @@
   instead of fixed colors, so the light/dark switch only changes the values below.
 */
 @theme inline {
-  --color-brand: #f47b20;
+  --color-brand: var(--brand);            /* logo color: orange (dark), coral pink (light) */
   --font-display: "Boldonse", system-ui;
 
   --color-page: var(--page);               /* page background */
@@ -45,6 +45,7 @@
   --accent-hover: #d6cdb8;
   --on-accent: oklch(0.145 0 0);
   --gold: #e8d157;
+  --brand: #f47b20;
   --media-shadow: 0 0 0 1px rgb(255 255 255 / 0.04);
 
   /* Labels under the three home page tiles */
@@ -81,36 +82,58 @@
   --accent-hover: #5f3f24;
   --on-accent: #faf7f2;
   --gold: #866700;
+  --brand: #d9566b;
   --media-shadow:
     0 1px 2px rgb(60 40 20 / 0.08),
     0 14px 34px -14px rgb(60 40 20 / 0.35);
 
   --label-researcher: #614f41;
-  --label-engineer: #5f6b80;
+  --label-engineer: #6b8560;   /* sage, matching the light tile */
   --label-designer: #b0961a;
 
-  /* Slightly deeper skill colors so they hold up on the sand background */
-  --skill-uiux: #e47a2b;
-  --skill-dataviz: #d4b43a;
-  --skill-hci: #7d93b8;
-  --skill-rai: #dc9f90;
-  --skill-ar: #5f97ad;
-  --skill-decision: #a57c5d;
-  --skill-research: #958dc9;
-  --skill-frontend: #78a585;
+  /* Skill colors taken from the light-mode art: sunset sky, coral clouds, sage tile */
+  --skill-uiux: #e46c84;      /* coral pink clouds */
+  --skill-dataviz: #d6a83e;   /* mustard "WEB DESIGN" label */
+  --skill-hci: #7894b6;       /* denim top of the sky */
+  --skill-rai: #f29a92;       /* peach edge of the clouds */
+  --skill-ar: #9d98cc;        /* periwinkle middle of the sky */
+  --skill-decision: #c97f62;  /* warm terracotta */
+  --skill-research: #bf8fab;  /* dusky mauve bottom of the sky */
+  --skill-frontend: #93ab7d;  /* sage "SOFTWARE ENGINEER" tile */
   --skill-ink: #1c1917;
+}
+
+/*
+  "Dusk" palette for the About Me card in light mode, matching the pink clouds and
+  blue-to-pink sky in the light hero. Everything inside .tone-dusk that uses the
+  accent, gold or card colors picks these up automatically.
+*/
+:root[data-theme="light"] .tone-dusk {
+  --card-warm: #fbe3de;    /* pink-peach blush */
+  --accent: #a83e4b;       /* sunset coral pink: heading, buttons */
+  --accent-hover: #8c3240;
+  --on-accent: #fff7f4;
+  --gold: #ad4250;         /* coral pink: "ABOUT ME" label and glow */
 }
 
 body {
   @apply bg-page text-ink;
   margin: 0; /* prevents a white gap */
-  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/*
+  Theme-specific images (see ThemeImage.tsx and the hero in Home.tsx).
+  Both versions are always loaded; the one for the other theme is hidden, so
+  switching themes swaps pictures instantly, in step with the page colors.
+*/
+:root[data-theme="light"] .dark-only,
+:root:not([data-theme="light"]) .light-only {
+  visibility: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .animate-spin { animation: none !important; }
   .transition-opacity { transition: none !important; }
-  body { transition: none; }
 }
 
 @keyframes spin-slow {

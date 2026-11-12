@@ -1,3 +1,4 @@
+import ThemeImage from "./ThemeImage";
 import React from "react";
 
 type LoaderProps = {
@@ -15,10 +16,12 @@ export default function Loader({ visible }: LoaderProps) {
             aria-busy="true"
         >
             {/* Spinning logo */}
-            <img
-                src="/logo/amandahelga_logo.png"
+            <ThemeImage
+                dark="/logo/amandahelga_logo.png"
+                light="/logo/amandahelga_logo-light.png"
                 alt="Loading"
                 className="h-16 w-16 animate-spin-slow"
+                fit="contain"
             />
             <span className="sr-only">Loading…</span>
         </div>

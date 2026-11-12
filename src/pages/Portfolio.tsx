@@ -61,10 +61,10 @@ export default function Portfolio() {
                                 >
                                     {/* 4:3 cover */}
                                     <div className="relative aspect-[4/3] w-full overflow-hidden bg-surface">
-                                        {p.coverImage ? (
+                                        {p.cardImage || p.coverImage ? (
                                             <>
                                                 <img
-                                                    src={p.coverImage}
+                                                    src={p.cardImage ?? p.coverImage}
                                                     alt=""
                                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                                                     loading="lazy"

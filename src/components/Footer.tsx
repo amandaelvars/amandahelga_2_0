@@ -1,3 +1,4 @@
+import ThemeImage from "./ThemeImage";
 import React from "react";
 
 export default function Footer() {
@@ -6,10 +7,12 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         {/* Left side: Brand */}
         <a href="#home" className="flex items-center gap-2 text-ink font-semibold tracking-wide">
-          <img
-            src="/logo/amandahelga_logo.png"
+          <ThemeImage
+            dark="/logo/amandahelga_logo.png"
+            light="/logo/amandahelga_logo-light.png"
             alt="amandahelga logo"
-            className="h-6 w-6 object-contain"
+            className="h-6 w-6"
+            fit="contain"
           />
           amandahelga
         </a>

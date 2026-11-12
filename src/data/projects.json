@@ -1,5 +1,95 @@
 [
   {
+    "id": "contextual-ai-ar",
+    "title": "How Contextual Information in Physical Environments Shapes Decisions with AI",
+    "dates": "Accepted · IEEE AIxVR 2027",
+    "tagline": "An AR study of whether clues from the physical world help people tell when an AI is wrong.",
+    "stack": [
+      "Unity",
+      "Meta Quest 3",
+      "User study",
+      "Mixed methods"
+    ],
+    "summary": "AI assistants in augmented reality may advise people about parts of the physical world they can't see. In an AR visual-search study with 32 participants, we tested whether contextual information, such as how rare the target is or being able to inspect part of the scene, helps people make better decisions with fallible AI.",
+    "stats": [
+      {
+        "value": "32",
+        "label": "participants in a within-subjects AR study"
+      },
+      {
+        "value": "20,480",
+        "label": "planned trials across 16 blocks per person"
+      },
+      {
+        "value": "+9.5 pp",
+        "label": "AI-assisted accuracy with both context cues combined"
+      },
+      {
+        "value": "+40%",
+        "label": "longer decisions with AI when half the desk was visible"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "The question",
+        "paragraphs": [
+          "Imagine an AR assistant telling you a key is behind an object you can't see. You might know keys are rarely there, or see that the rest of the desk is empty. Those clues change how likely the claim is, but they can't confirm it.",
+          "We asked whether this kind of context helps people decide when to trust a fallible AI, or simply changes which answers they accept."
+        ]
+      },
+      {
+        "heading": "What we did",
+        "bullets": [
+          "Participants wore a Meta Quest 3 and judged whether a virtual key was present on a real desk that was fully or partly hidden behind a virtual divider.",
+          "We varied how often the key appeared (25% or 50% of trials) and how much of the desk was visible (none or the near half).",
+          "AI advice was simulated and 80% accurate, shown as spoken audio, an arrow in the scene, or an x-ray view through the divider; one condition had no AI.",
+          "We measured three things separately: overall accuracy, how selectively people followed correct versus incorrect advice, and decision time. Interviews and questionnaires added participants' own accounts."
+        ]
+      },
+      {
+        "heading": "What we found",
+        "bullets": [
+          "Combining both clues raised AI-assisted accuracy from 73.7% to 83.1%, but most of that gain came from which cases were left to judge, not from people using the AI better.",
+          "When keys were rare, people became more skeptical whenever the AI said \"Present\", for correct and incorrect suggestions alike.",
+          "Seeing part of the desk made decisions about 40% slower, with no detected improvement in telling right from wrong advice.",
+          "Participants described using the odds as a general strategy, and overriding the AI only when they could see evidence that proved it wrong."
+        ]
+      },
+      {
+        "heading": "Design implications",
+        "bullets": [
+          "Show whether an AI claim can currently be checked, separately from the AI's confidence.",
+          "Present how common the target is, the AI's track record and its current prediction as distinct cues.",
+          "When evaluating AR assistants, account for which decisions remain unresolved as the interface changes what people can see."
+        ]
+      }
+    ],
+    "bullets": [
+      "Co-first author with Omar Elgohary."
+    ],
+    "paper": {
+      "title": "How Contextual Information in Physical Environments Shapes Decisions with AI",
+      "authors": "Omar Elgohary*, Amanda Elvarsdóttir*, Vannessa Lee and Zhu-Tian Chen. University of Minnesota.",
+      "note": "*Equal contribution (co-first authors).",
+      "status": "Accepted to IEEE AIxVR 2027.",
+      "url": null
+    },
+    "coverImage": "/img/projects/contextual-ai-ar-teaser.webp",
+    "cardImage": "/img/projects/contextual-ai-ar.webp",
+    "coverCaption": "The three AI formats in the study: (A) spoken advice, (B) an arrow in the scene, and (C) an x-ray view through the divider.",
+    "links": {
+      "repo": null,
+      "demo": null,
+      "doc": null
+    },
+    "tags": [
+      "Research",
+      "HCI",
+      "AR",
+      "AI"
+    ]
+  },
+  {
     "id": "aurora-vis",
     "title": "Aurora Story: Tracing an Aurora From Solar Storm to Colored Sky",
     "dates": "Spring 2026",
@@ -93,7 +183,7 @@
   },
   {
     "id": "chen-lab",
-    "title": "Dr. Zhu-Tian Chen’s Research Lab",
+    "title": "AI Reliance in Mobile vs. AR Environments",
     "dates": "May 2025 – May 2026",
     "tagline": "Research on how AR versus mobile interfaces shape decision-making and reliance on AI.",
     "stack": [

@@ -1,3 +1,4 @@
+import ThemeImage from "./ThemeImage";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
@@ -57,10 +58,12 @@ export default function Navbar() {
           className="flex items-center gap-2 text-ink hover:text-brand font-semibold tracking-wide transition"
           onClick={handleLinkClick}
         >
-          <img
-            src="/logo/amandahelga_logo.png"
+          <ThemeImage
+            dark="/logo/amandahelga_logo.png"
+            light="/logo/amandahelga_logo-light.png"
             alt="amandahelga logo"
-            className="h-8 w-8 object-contain"
+            className="h-8 w-8"
+            fit="contain"
           />
           amandahelga
         </Link>
