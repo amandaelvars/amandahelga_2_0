@@ -45,13 +45,36 @@ export type Entry = {
     link?: string;
 };
 
-export type Section = { title: string; entries: Entry[] };
+export type SectionId = "education" | "experience" | "research" | "publications" | "projects" | "activities";
+
+export type Section = { id: SectionId; title: string; entries: Entry[] };
+
+/**
+ * The two ways the Resume page can be read. Each view shows the same content in a
+ * different order. The view is kept in the address, e.g. /resume?view=research,
+ * so you can link straight to it from an application.
+ */
+export const VIEWS = {
+    industry: {
+        label: "Industry",
+        description: "Ordered for software engineering, UI/UX and data visualization roles.",
+        order: ["experience", "projects", "research", "publications", "education", "activities"],
+    },
+    research: {
+        label: "Research",
+        description: "Ordered like an academic CV, for PhD applications.",
+        order: ["education", "research", "publications", "projects", "experience", "activities"],
+    },
+} satisfies Record<string, { label: string; description: string; order: SectionId[] }>;
+
+export type ViewId = keyof typeof VIEWS;
 
 /** Shorthand for a tagged bullet. */
 const b = (text: string, ...skills: Skill[]): Bullet => ({ text, skills });
 
 export const resume: Section[] = [
     {
+        id: "education",
         title: "Education",
         entries: [
             {
@@ -75,6 +98,7 @@ export const resume: Section[] = [
         ],
     },
     {
+        id: "experience",
         title: "Experience",
         entries: [
             {
@@ -197,6 +221,7 @@ export const resume: Section[] = [
         ],
     },
     {
+        id: "research",
         title: "Research Experience",
         entries: [
             {
@@ -263,6 +288,7 @@ export const resume: Section[] = [
         ],
     },
     {
+        id: "publications",
         title: "Publications",
         entries: [
             {
@@ -282,6 +308,7 @@ export const resume: Section[] = [
         ],
     },
     {
+        id: "projects",
         title: "Selected Projects",
         entries: [
             {
@@ -325,6 +352,7 @@ export const resume: Section[] = [
         ],
     },
     {
+        id: "activities",
         title: "Activities",
         entries: [
             {

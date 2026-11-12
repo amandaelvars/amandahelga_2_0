@@ -1,6 +1,15 @@
 import { useMemo, useState, type CSSProperties } from "react";
-import { Link } from "react-router-dom";
-import { resume, SKILL_COLOR, SKILLS, technicalSkills, type Entry, type Skill } from "../data/resume";
+import { Link, useSearchParams } from "react-router-dom";
+import {
+    resume,
+    SKILL_COLOR,
+    SKILLS,
+    technicalSkills,
+    VIEWS,
+    type Entry,
+    type Skill,
+    type ViewId,
+} from "../data/resume";
 
 /** A thin stripe of all the skill colors, like a palette from the home page art. */
 const paletteStripe = `linear-gradient(90deg, ${SKILLS.map(
@@ -31,6 +40,12 @@ export default function Resume() {
 
     const filterProps = { active, setActive, counts };
 
+    // Industry or Research view, kept in the address (?view=research) so it can be linked to
+    const [params, setParams] = useSearchParams();
+    const view: ViewId = params.get("view") === "research" ? "research" : "industry";
+    const setView = (v: ViewId) => setParams(v === "industry" ? {} : { view: v }, { replace: true });
+    const sections = VIEWS[view].order.map((id) => resume.find((s) => s.id === id)!);
+
     return (
         // --hl is the selected skill's color; highlights below read it
         <div style={{ "--hl": active ? SKILL_COLOR[active] : "transparent" } as CSSProperties}>
@@ -39,7 +54,36 @@ export default function Resume() {
               <div className="min-w-0">
                 {/* Header */}
                 <header>
-                    <h1 className="text-3xl font-bold tracking-tight">Resume</h1>
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                        <h1 className="text-3xl font-bold tracking-tight">Resume</h1>
+
+                        {/* Industry / Research view switch */}
+                        <div
+                            role="radiogroup"
+                            aria-label="Resume view"
+                            className="tone-dusk inline-flex rounded-full border border-line bg-surface/60 p-1"
+                        >
+                            {(Object.keys(VIEWS) as ViewId[]).map((v) => {
+                                const on = view === v;
+                                return (
+                                    <button
+                                        key={v}
+                                        type="button"
+                                        role="radio"
+                                        aria-checked={on}
+                                        onClick={() => setView(v)}
+                                        className={[
+                                            "rounded-full px-4 py-1.5 text-sm font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent",
+                                            on ? "bg-accent text-on-accent shadow-sm" : "text-body hover:text-ink",
+                                        ].join(" ")}
+                                    >
+                                        {VIEWS[v].label}
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    </div>
+                    <p className="mt-2 text-sm text-muted">{VIEWS[view].description}</p>
                 </header>
 
                 {/* Skill filter above the resume on small screens */}
@@ -48,8 +92,8 @@ export default function Resume() {
                 </div>
 
                 {/* Sections */}
-                {resume.map((section) => (
-                    <div key={section.title}>
+                {sections.map((section) => (
+                    <div key={section.id}>
                         <hr className="my-6 border-line" />
                         <section className="space-y-5">
                             <h2 className="text-lg font-semibold tracking-wide text-ink-2">{section.title}</h2>
