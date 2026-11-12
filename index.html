@@ -3,11 +3,22 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="logo/amandahelga_logo.png" />
+  <link rel="icon" type="image/png" href="/logo/amandahelga_logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>amandahelga</title>
-  <script type="module" crossorigin src="/assets/index-DwVoTkOK.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DokxRczX.css">
+  <!-- Apply the saved or system theme before the page paints, to avoid a flash -->
+  <script>
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem("theme"); } catch (e) {}
+      if (theme !== "light" && theme !== "dark") {
+        theme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      }
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <script type="module" crossorigin src="/assets/index-BXZWmeOV.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CF1PJq3C.css">
 </head>
 
 <body>
