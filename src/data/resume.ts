@@ -275,7 +275,7 @@ export const resume: Section[] = [
             {
                 org: "JugglAR: Exploring Mixed Reality for Enhanced Task Learning and Muscle Memory Formation",
                 role: "H. Chandirasekar*, A. Elvarsdóttir*, A. Purohit, D. Blundell, Z. Chen. *Equal contribution.",
-                dates: "Submitted to ACM",
+                dates: "Submitted to CHI 2025 LBW",
                 link: "/portfolio/ar-juggling",
                 skills: ["Research", "AR", "HCI"],
             },
