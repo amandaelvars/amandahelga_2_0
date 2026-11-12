@@ -15,6 +15,10 @@ export type Project = {
     coverImage?: string;
     links?: LinkSet;
     tags?: string[];
+    /** Optional long-form content for the project page. */
+    stats?: { value: string; label: string }[];
+    sections?: { heading: string; paragraphs?: string[]; bullets?: string[] }[];
+    paper?: { title: string; authors: string; note?: string; status: string; url?: string | null };
 };
 
 export const projects: Project[] = projectsData as unknown as Project[];

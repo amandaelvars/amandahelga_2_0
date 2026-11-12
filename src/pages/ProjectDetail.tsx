@@ -108,6 +108,38 @@ export default function ProjectDetail() {
                 </section>
             )}
 
+            {/* Key numbers */}
+            {!!project.stats?.length && (
+                <dl className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
+                    {project.stats.map((s) => (
+                        <div key={s.label} className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-4">
+                            <dt className="sr-only">{s.label}</dt>
+                            <dd className="text-2xl font-bold text-[#e5dbcb]">{s.value}</dd>
+                            <dd className="mt-1 text-sm leading-snug text-gray-400">{s.label}</dd>
+                        </div>
+                    ))}
+                </dl>
+            )}
+
+            {/* Long-form sections */}
+            {project.sections?.map((s) => (
+                <section key={s.heading} className="mt-10">
+                    <h2 className="text-lg font-semibold tracking-wide text-gray-200">{s.heading}</h2>
+                    {s.paragraphs?.map((para, i) => (
+                        <p key={i} className="mt-3 leading-relaxed text-gray-300">
+                            {para}
+                        </p>
+                    ))}
+                    {!!s.bullets?.length && (
+                        <ul className="mt-3 list-disc pl-5 space-y-2 leading-relaxed text-gray-300">
+                            {s.bullets.map((b, i) => (
+                                <li key={i}>{b}</li>
+                            ))}
+                        </ul>
+                    )}
+                </section>
+            ))}
+
             {/* Highlights */}
             {!!project.bullets?.length && (
                 <section className="mt-10">
@@ -133,6 +165,43 @@ export default function ProjectDetail() {
                                 {s}
                             </span>
                         ))}
+                    </div>
+                </section>
+            )}
+
+            {/* Paper */}
+            {project.paper && (
+                <section className="mt-10">
+                    <h2 className="text-lg font-semibold tracking-wide text-gray-200">Paper</h2>
+                    <div className="mt-3 rounded-xl border border-neutral-800 bg-neutral-900/50 p-5">
+                        <p className="font-semibold text-gray-100">{project.paper.title}</p>
+                        <p className="mt-2 text-sm text-gray-300">
+                            {/* Highlight Amanda's name in the author list */}
+                            {project.paper.authors.split(/(Amanda Elvarsdóttir\*?)/).map((part, i) =>
+                                part.startsWith("Amanda Elvarsdóttir") ? (
+                                    <strong key={i} className="font-semibold text-[#e5dbcb]">
+                                        {part}
+                                    </strong>
+                                ) : (
+                                    part
+                                )
+                            )}
+                        </p>
+                        {project.paper.note && (
+                            <p className="mt-1 text-xs text-gray-500">{project.paper.note}</p>
+                        )}
+                        <p className="mt-1 text-sm italic text-gray-400">{project.paper.status}</p>
+                        {project.paper.url && (
+                            <a
+                                href={project.paper.url}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="mt-4 inline-block rounded-md border border-neutral-700 px-4 py-2 text-sm font-semibold text-gray-200 transition hover:border-[#e5dbcb] hover:text-[#e5dbcb]"
+                            >
+                                Read the paper (PDF) <span aria-hidden="true">↗</span>
+                                <span className="sr-only"> (opens in a new tab)</span>
+                            </a>
+                        )}
                     </div>
                 </section>
             )}

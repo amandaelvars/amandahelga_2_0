@@ -45,6 +45,18 @@ export default function Resume() {
         <section className="space-y-4">
           <h2 className="text-lg font-semibold tracking-wide text-gray-200">Experience</h2>
           <Item
+            org="Kuratech ehf."
+            location="Reykjavik, Iceland"
+            role="Software Engineer"
+            dates="Feb. 2026 – Present"
+            bullets={[
+              "Lead frontend engineering and UI/UX design, including a complete redesign of the core Icelandic application, its information architecture, and user workflows.",
+              "Served as technical lead for the Estonian expansion, collaborating directly with bankruptcy trustees to define requirements and coordinate full-stack development.",
+              "Designed and developed the fraud detection tool’s frontend, contributing to backend development and complex financial data visualization.",
+              "Led the design and frontend development of kröfuhafi.is, a creditor claims portal, collaborating with backend engineering to launch the platform.",
+            ]}
+          />
+          <Item
             org="Graduate Admissions Office, University of Minnesota"
             location="Minneapolis, MN"
             role="Administrative Fellow"
