@@ -2,9 +2,7 @@ import React from "react";
 
 export default function Contact() {
   return (
-    <main className="bg-neutral-950 text-gray-100">
-      {/* spacer for sticky navbar */}
-      <div className="h-14" />
+    <div>
 
       <div className="mx-auto max-w-3xl px-4 py-12">
         <h1 className="text-3xl font-bold tracking-tight mb-6 text-[#e5dbcb]">
@@ -79,6 +77,6 @@ export default function Contact() {
           </button>
         </form>
       </div>
-    </main>
+    </div>
   );
 }

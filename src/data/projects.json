@@ -1,8 +1,39 @@
 [
   {
+    "id": "aurora-vis",
+    "title": "Aurora Story: Tracing an Aurora From Solar Storm to Colored Sky",
+    "dates": "Spring 2026",
+    "tagline": "An interactive D3 story that follows an aurora from solar storm to colored sky.",
+    "stack": [
+      "React",
+      "D3.js",
+      "Vite",
+      "NOAA SWPC data"
+    ],
+    "summary": "A Data Visualization class project: an interactive scrollytelling page that follows an aurora from the Sun's solar wind, through Earth's magnetic field and storm indicators, to the colors it paints at different altitudes.",
+    "bullets": [
+      "Told the story in five chapters, from solar wind reaching Earth to auroras over time, built around the May 2024 geomagnetic storm.",
+      "Visualized NOAA space weather data with D3, including solar wind clusters by plasma density and temperature, magnetic field (Bz) direction, and the Kp index across stations and time.",
+      "Built an interactive atmosphere panel that scrolls through the aurora to show why its colors change with altitude.",
+      "Team project with Sudarsna Mukund, Fletcher Gornick and Sam Chea."
+    ],
+    "coverImage": "/img/projects/aurora-vis.webp",
+    "links": {
+      "repo": null,
+      "demo": "https://amandaelvars.github.io/aurora-vis/",
+      "doc": null
+    },
+    "tags": [
+      "Visualization",
+      "School Project",
+      "Front-end"
+    ]
+  },
+  {
     "id": "citation-ai-visualization",
     "title": "SourceLens: LLM-Based Assistant for Paper Reading",
-    "dates": "September 2025 – Present",
+    "dates": "Fall 2025",
+    "tagline": "An LLM-powered reading canvas that brings papers, citations and evidence together.",
     "stack": [
       "React",
       "Typescript",
@@ -19,7 +50,7 @@
       "Implemented the favorites system for saving papers users want to revisit later.",
       "Created the overview panel, allowing users to quickly browse all paper sections and jump directly to any chapter."
     ],
-    "coverImage": "/img/projects/citation-ai-preview.jpg",
+    "coverImage": "/img/projects/citation-ai-preview.webp",
     "links": {
       "repo": null,
       "demo": null,
@@ -36,7 +67,8 @@
   {
     "id": "chen-lab-page",
     "title": "Dr. Zhu-tian Chen’s Research Lab Website",
-    "dates": "May 2025 – Present",
+    "dates": "May 2025 – May 2026",
+    "tagline": "Set up and built the website for Dr. Chen's research lab at the University of Minnesota.",
     "stack": [
       "React",
       "Typescript",
@@ -48,7 +80,7 @@
       "Initiated and set up the website build for Dr. Chen's lab at the University of Minnesota.",
       "Literature reviews on decision-making theories and risk perception."
     ],
-    "coverImage": "/img/projects/zhutian-chen-page.png",
+    "coverImage": "/img/projects/zhutian-chen-page.webp",
     "links": {
       "repo": null,
       "demo": null,
@@ -62,7 +94,8 @@
   {
     "id": "chen-lab",
     "title": "Dr. Zhu-Tian Chen’s Research Lab",
-    "dates": "May 2025 – Present",
+    "dates": "May 2025 – May 2026",
+    "tagline": "Research on how AR versus mobile interfaces shape decision-making and reliance on AI.",
     "stack": [
       "Research",
       "AR",
@@ -74,7 +107,7 @@
       "Lead experimental design on decision context, risk level, and interface modality.",
       "Literature reviews on decision-making theories and risk perception."
     ],
-    "coverImage": "/img/projects/ar_decisionmaking.jpg",
+    "coverImage": "/img/projects/ar_decisionmaking.webp",
     "links": {
       "repo": null,
       "demo": null,
@@ -90,6 +123,7 @@
     "id": "ar-juggling",
     "title": "AR for Task Learning & Muscle Memory",
     "dates": "Sep. 2024 – Jan. 2025",
+    "tagline": "An AR app that teaches juggling and tests whether virtual practice carries over to the real thing.",
     "stack": [
       "AR",
       "HCI",
@@ -100,7 +134,7 @@
       "Designed user study and instrumentation.",
       "Explored slowed-down virtual trajectories for motor learning."
     ],
-    "coverImage": "/img/projects/jugglar.png",
+    "coverImage": "/img/projects/jugglar.webp",
     "links": {
       "repo": null,
       "demo": null,
@@ -115,6 +149,7 @@
     "id": "graco-cloud",
     "title": "Graco — Cloud Migration",
     "dates": "May 2022 – Nov. 2023",
+    "tagline": "Migrated a legacy product to AEM Cloud, working with product managers on scope and rollout.",
     "stack": [
       "Java",
       "JavaScript",
@@ -125,7 +160,7 @@
     "bullets": [
       "Collaborated with product managers on scope & milestones."
     ],
-    "coverImage": "/img/projects/graco-migration.png",
+    "coverImage": "/img/projects/graco-migration.webp",
     "links": {
       "repo": null,
       "demo": null,
@@ -141,6 +176,7 @@
     "id": "modus-frontend",
     "title": "Modus — Web Application",
     "dates": "May 2021 – Aug. 2022",
+    "tagline": "Built pages for a platform that gives sales teams content, buyer engagement tools and on-demand learning.",
     "stack": [
       "HTML",
       "JavaScript",
@@ -151,7 +187,7 @@
     "bullets": [
       "Built user-facing pages, and fixed bugs."
     ],
-    "coverImage": "/img/projects/modus-project.png",
+    "coverImage": "/img/projects/modus-project.webp",
     "links": {
       "repo": null,
       "demo": null,

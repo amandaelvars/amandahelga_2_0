@@ -6,6 +6,7 @@ import Loader from "./components/Loader";
 import Home from "./pages/Home";
 import Resume from "./pages/Resume";
 import Portfolio from "./pages/Portfolio";
+import ProjectDetail from "./pages/ProjectDetail";
 import Contact from "./pages/Contact";
 
 export default function App() {
@@ -44,6 +45,7 @@ export default function App() {
 
             {/* Portfolio page */}
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/portfolio/:id" element={<ProjectDetail />} />
 
             {/* Contact page */}
             <Route path="/contact" element={<Contact />} />

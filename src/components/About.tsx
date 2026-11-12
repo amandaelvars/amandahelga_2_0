@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 function SpacedLabel({
   text,
@@ -79,7 +80,6 @@ export default function About() {
     <>
       {/* --- 3 Tiles Section --- */}
       <section
-        id="about"
         ref={sectionRef}
         className="mx-auto max-w-6xl px-4 mt-[12vh] md:mt-[16vh] py-16 md:py-20"
         style={{
@@ -97,7 +97,7 @@ export default function About() {
           <figure className="flex flex-col">
             <div className="group relative aspect-square w-full overflow-hidden bg-neutral-900">
               <img
-                src="/img/researcher.png"
+                src="/img/researcher.webp"
                 alt="Researcher"
                 className="w-full h-full object-cover transition-transform duration-500"
                 loading="lazy"
@@ -112,7 +112,7 @@ export default function About() {
           <figure className="flex flex-col">
             <div className="group relative aspect-square w-full overflow-hidden bg-neutral-900">
               <img
-                src="/img/software-engineer.png"
+                src="/img/software-engineer.webp"
                 alt="Software Engineer"
                 className="w-full h-full object-cover transition-transform duration-500"
                 loading="lazy"
@@ -127,7 +127,7 @@ export default function About() {
           <figure className="flex flex-col">
             <div className="group relative aspect-square w-full overflow-hidden bg-neutral-900">
               <img
-                src="/img/web-designer.png"
+                src="/img/web-designer.webp"
                 alt="Web Design"
                 className="w-full h-full object-cover transition-transform duration-500"
                 loading="lazy"
@@ -143,23 +143,100 @@ export default function About() {
         </div>
       </section>
 
-      {/* --- About Box Section --- */}
-      <section className="mx-auto max-w-3xl px-4 py-12 md:py-16 text-center">
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-[#e5dbcb] mb-4">
-          ABOUT ME
-        </h2>
-        <p className="text-gray-300 text-lg leading-relaxed mb-4">
-          I'm an Icelandic Graduate Student at the University of Minnesota,
-          pursuing a Master of Science in Computer Science. I hold a Bachelor of
-          Science with a major in Computer Science and a minor in Math from
-          Northern Michigan University. I am a natural problem solver with a
-          strong foundation in computer science, physics, and math. I fluently
-          speak both English and Icelandic.
-        </p>
-        <p className="text-gray-300 text-lg leading-relaxed">
-          If I'm not coding you can find me reading, stargazing, playing on my
-          Switch, drawing or running.
-        </p>
+      {/* --- About Me Section --- */}
+      <section id="about" className="scroll-mt-20 mx-auto max-w-6xl px-4 py-12 md:py-20">
+        <div className="relative overflow-hidden rounded-3xl border border-[#e5dbcb]/10 bg-[#15120f] p-6 sm:p-10 md:p-12">
+          {/* Soft warm glows, using the tile label colors */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-32 -right-24 h-80 w-80 rounded-full bg-[#e8d157]/10 blur-3xl"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-[#838fa4]/10 blur-3xl"
+          />
+
+          <div className="relative grid gap-10 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:items-center">
+            {/* Portrait */}
+            <div className="mx-auto w-full max-w-xs md:max-w-none">
+              <div className="overflow-hidden rounded-2xl border border-[#e5dbcb]/15 shadow-2xl shadow-black/40">
+                <img
+                  src="/img/portrait.webp"
+                  alt="Amanda Elvarsdóttir"
+                  className="aspect-[4/5] w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Text */}
+            <div>
+              <p className="text-sm uppercase tracking-[0.25em] text-[#e8d157]">About me</p>
+              <h2 className="mt-3 font-display text-2xl leading-snug md:text-3xl text-[#e5dbcb]">
+                From Akureyri to Minneapolis
+              </h2>
+
+              <p className="mt-6 text-lg leading-relaxed text-gray-300">
+                I'm an Icelandic software engineer with a Master of Science in
+                Computer Science from the University of Minnesota. I'm a natural
+                problem solver with a strong foundation in computer science,
+                physics and math.
+              </p>
+
+              {/* Quick facts */}
+              <dl className="mt-8 grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2">
+                {[
+                  { label: "Master's", value: "M.S. Computer Science, University of Minnesota, 2026" },
+                  { label: "Bachelor's", value: "B.S. Computer Science, minor in Math, Northern Michigan University, 2021" },
+                  { label: "From", value: "Akureyri, Iceland" },
+                  { label: "Languages", value: "English and Icelandic" },
+                ].map((f) => (
+                  <div key={f.label} className="border-l-2 border-[#e5dbcb]/20 pl-4">
+                    <dt className="text-xs uppercase tracking-widest text-gray-500">{f.label}</dt>
+                    <dd className="mt-1 text-gray-200">{f.value}</dd>
+                  </div>
+                ))}
+              </dl>
+
+              {/* Hobbies */}
+              <div className="mt-8">
+                <p className="text-sm text-gray-400">When I'm not coding, you can find me</p>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {["Reading", "Stargazing", "Playing on my Switch", "Drawing", "Running"].map((h) => (
+                    <li
+                      key={h}
+                      className="rounded-full border border-[#e5dbcb]/15 bg-white/[0.03] px-3 py-1 text-sm text-gray-200"
+                    >
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Calls to action */}
+              <div className="mt-10 flex flex-wrap gap-3">
+                <Link
+                  to="/portfolio"
+                  className="rounded-md bg-[#e5dbcb] px-5 py-2.5 font-semibold text-neutral-950 transition hover:bg-[#d6cdb8]"
+                >
+                  See my work
+                </Link>
+                <Link
+                  to="/resume"
+                  className="rounded-md border border-[#e5dbcb]/30 px-5 py-2.5 font-semibold text-[#e5dbcb] transition hover:border-[#e5dbcb]"
+                >
+                  Resume
+                </Link>
+                <Link
+                  to="/contact"
+                  className="rounded-md px-5 py-2.5 font-semibold text-gray-300 transition hover:text-[#e5dbcb]"
+                >
+                  Get in touch →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </>
   );

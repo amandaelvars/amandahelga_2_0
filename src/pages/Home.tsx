@@ -70,9 +70,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="bg-neutral-950 text-gray-100">
-      {/* spacer for sticky navbar */}
-      <div className="h-14" />
+    <div>
 
       {/* Match navbar width */}
       <section className="mx-auto max-w-6xl px-4">
@@ -84,7 +82,7 @@ export default function Home() {
           {/* LAYER 1: BACKGROUND SKY (panning) */}
           <img
             ref={bgRef}
-            src="/img/hero-background.png"
+            src="/img/hero-background.webp"
             alt="Sky gradient"
             className="absolute inset-0 w-full object-cover will-change-transform z-0"
             style={{ transform: "translateY(0)" }}
@@ -94,7 +92,7 @@ export default function Home() {
           {/* LAYER 2: CLOUDS (behind town, moves up-right) */}
           <img
             ref={cloudsRef}
-            src="/img/clouds.png"
+            src="/img/clouds.webp"
             alt="Clouds"
             className="absolute top-15 left-0 sm:left-15 md:left-35 md:top-15 lg:top-[-35px] w-[58%] md:w-[38%] max-w-none object-contain pointer-events-none select-none z-10"
             style={{ transform: "translate(0px, 0px)" }}
@@ -102,7 +100,7 @@ export default function Home() {
 
           {/* LAYER 3: TOWN (static) */}
           <img
-            src="/img/akureyri-town.png"
+            src="/img/akureyri-town.webp"
             alt="Akureyri town"
             className="absolute inset-x-0 bottom-10 w-full object-contain pointer-events-none select-none z-20"
           />
@@ -130,7 +128,7 @@ export default function Home() {
             style={{ transform: "translateX(0)" }}
           >
             <img
-              src="/img/boat.png"
+              src="/img/boat.webp"
               alt="Boat"
               className="h-16 md:h-20 object-contain"
               style={{ transform: "scaleX(-1)" }} // mirroring the boat
@@ -139,6 +137,6 @@ export default function Home() {
         </div>
       </section>
       <About />
-    </main>
+    </div>
   );
 }

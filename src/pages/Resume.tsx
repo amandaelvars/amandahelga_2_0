@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Resume() {
   return (
-    <main className="bg-neutral-950 text-gray-100">
-      {/* top spacer so content doesn't hide behind sticky navbar */}
-      <div className="h-14" />
+    <div>
 
       <div className="mx-auto max-w-4xl px-4 py-10">
         {/* Header */}
@@ -23,7 +21,7 @@ export default function Resume() {
             org="University of Minnesota"
             location="Minneapolis, MN"
             role="M.S in Computer Science"
-            dates="Currently"
+            dates="May 2026"
           />
 
           <Item
@@ -159,7 +157,7 @@ export default function Resume() {
           <Link to="/" className="text-sm text-gray-400 hover:text-brand">← Back to Home</Link>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
 
