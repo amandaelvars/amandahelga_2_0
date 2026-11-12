@@ -20,8 +20,8 @@ export default function ProjectDetail() {
         return (
             <div className="mx-auto max-w-4xl px-4 py-16">
                 <h1 className="text-3xl font-bold tracking-tight">Project not found</h1>
-                <p className="mt-4 text-gray-300">That project doesn't exist or has moved.</p>
-                <Link to="/portfolio" className="mt-6 inline-block text-[#e5dbcb] hover:underline">
+                <p className="mt-4 text-body">That project doesn't exist or has moved.</p>
+                <Link to="/portfolio" className="mt-6 inline-block text-accent hover:underline">
                     ← All projects
                 </Link>
             </div>
@@ -40,14 +40,14 @@ export default function ProjectDetail() {
 
     return (
         <article className="mx-auto max-w-4xl px-4 py-10">
-            <Link to="/portfolio" className="text-sm text-gray-400 hover:text-[#e5dbcb]">
+            <Link to="/portfolio" className="text-sm text-muted hover:text-accent">
                 ← All projects
             </Link>
 
             {/* Header */}
             <header className="mt-6">
-                <div className="text-sm text-gray-400">{project.dates}</div>
-                <h1 className="mt-1 text-3xl md:text-4xl font-bold tracking-tight text-[#e5dbcb]">
+                <div className="text-sm text-muted">{project.dates}</div>
+                <h1 className="mt-1 text-3xl md:text-4xl font-bold tracking-tight text-accent">
                     {project.title}
                 </h1>
                 {!!project.tags?.length && (
@@ -55,7 +55,7 @@ export default function ProjectDetail() {
                         {project.tags.map((t) => (
                             <span
                                 key={t}
-                                className="px-2.5 py-0.5 rounded-full text-xs border border-neutral-700 text-gray-300"
+                                className="px-2.5 py-0.5 rounded-full text-xs border border-line-strong text-body"
                             >
                                 {t}
                             </span>
@@ -66,7 +66,7 @@ export default function ProjectDetail() {
 
             {/* Cover */}
             {project.coverImage && (
-                <div className="mt-8 overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900">
+                <div className="mt-8 overflow-hidden rounded-xl border border-line bg-surface">
                     <img src={project.coverImage} alt={`${project.title} screenshot`} className="w-full h-auto" />
                 </div>
             )}
@@ -79,7 +79,7 @@ export default function ProjectDetail() {
                             href={demo}
                             target="_blank"
                             rel="noreferrer"
-                            className="bg-[#e5dbcb] text-neutral-950 px-5 py-2.5 rounded-md font-semibold hover:bg-[#d6cdb8] transition"
+                            className="bg-accent text-on-accent px-5 py-2.5 rounded-md font-semibold hover:bg-accent-hover transition"
                         >
                             View live site <span aria-hidden="true">↗</span>
                             <span className="sr-only"> (opens in a new tab)</span>
@@ -91,7 +91,7 @@ export default function ProjectDetail() {
                             href={l.href}
                             target="_blank"
                             rel="noreferrer"
-                            className="border border-neutral-700 text-gray-200 px-5 py-2.5 rounded-md font-semibold hover:border-[#e5dbcb] hover:text-[#e5dbcb] transition"
+                            className="border border-line-strong text-ink-2 px-5 py-2.5 rounded-md font-semibold hover:border-accent hover:text-accent transition"
                         >
                             {l.label} <span aria-hidden="true">↗</span>
                             <span className="sr-only"> (opens in a new tab)</span>
@@ -103,8 +103,8 @@ export default function ProjectDetail() {
             {/* Overview */}
             {project.summary && (
                 <section className="mt-10">
-                    <h2 className="text-lg font-semibold tracking-wide text-gray-200">Overview</h2>
-                    <p className="mt-3 text-lg leading-relaxed text-gray-300">{project.summary}</p>
+                    <h2 className="text-lg font-semibold tracking-wide text-ink-2">Overview</h2>
+                    <p className="mt-3 text-lg leading-relaxed text-body">{project.summary}</p>
                 </section>
             )}
 
@@ -112,10 +112,10 @@ export default function ProjectDetail() {
             {!!project.stats?.length && (
                 <dl className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
                     {project.stats.map((s) => (
-                        <div key={s.label} className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-4">
+                        <div key={s.label} className="rounded-xl border border-line bg-surface/50 p-4">
                             <dt className="sr-only">{s.label}</dt>
-                            <dd className="text-2xl font-bold text-[#e5dbcb]">{s.value}</dd>
-                            <dd className="mt-1 text-sm leading-snug text-gray-400">{s.label}</dd>
+                            <dd className="text-2xl font-bold text-accent">{s.value}</dd>
+                            <dd className="mt-1 text-sm leading-snug text-muted">{s.label}</dd>
                         </div>
                     ))}
                 </dl>
@@ -124,14 +124,14 @@ export default function ProjectDetail() {
             {/* Long-form sections */}
             {project.sections?.map((s) => (
                 <section key={s.heading} className="mt-10">
-                    <h2 className="text-lg font-semibold tracking-wide text-gray-200">{s.heading}</h2>
+                    <h2 className="text-lg font-semibold tracking-wide text-ink-2">{s.heading}</h2>
                     {s.paragraphs?.map((para, i) => (
-                        <p key={i} className="mt-3 leading-relaxed text-gray-300">
+                        <p key={i} className="mt-3 leading-relaxed text-body">
                             {para}
                         </p>
                     ))}
                     {!!s.bullets?.length && (
-                        <ul className="mt-3 list-disc pl-5 space-y-2 leading-relaxed text-gray-300">
+                        <ul className="mt-3 list-disc pl-5 space-y-2 leading-relaxed text-body">
                             {s.bullets.map((b, i) => (
                                 <li key={i}>{b}</li>
                             ))}
@@ -143,8 +143,8 @@ export default function ProjectDetail() {
             {/* Highlights */}
             {!!project.bullets?.length && (
                 <section className="mt-10">
-                    <h2 className="text-lg font-semibold tracking-wide text-gray-200">Highlights</h2>
-                    <ul className="mt-3 list-disc pl-5 space-y-2 leading-relaxed text-gray-300">
+                    <h2 className="text-lg font-semibold tracking-wide text-ink-2">Highlights</h2>
+                    <ul className="mt-3 list-disc pl-5 space-y-2 leading-relaxed text-body">
                         {project.bullets.map((b, i) => (
                             <li key={i}>{b}</li>
                         ))}
@@ -155,12 +155,12 @@ export default function ProjectDetail() {
             {/* Stack */}
             {!!project.stack?.length && (
                 <section className="mt-10">
-                    <h2 className="text-lg font-semibold tracking-wide text-gray-200">Tools &amp; stack</h2>
+                    <h2 className="text-lg font-semibold tracking-wide text-ink-2">Tools &amp; stack</h2>
                     <div className="mt-3 flex flex-wrap gap-2">
                         {project.stack.map((s) => (
                             <span
                                 key={s}
-                                className="px-3 py-1 rounded-md text-sm bg-neutral-900 border border-neutral-800 text-gray-200"
+                                className="px-3 py-1 rounded-md text-sm bg-surface border border-line text-ink-2"
                             >
                                 {s}
                             </span>
@@ -172,14 +172,14 @@ export default function ProjectDetail() {
             {/* Paper */}
             {project.paper && (
                 <section className="mt-10">
-                    <h2 className="text-lg font-semibold tracking-wide text-gray-200">Paper</h2>
-                    <div className="mt-3 rounded-xl border border-neutral-800 bg-neutral-900/50 p-5">
-                        <p className="font-semibold text-gray-100">{project.paper.title}</p>
-                        <p className="mt-2 text-sm text-gray-300">
+                    <h2 className="text-lg font-semibold tracking-wide text-ink-2">Paper</h2>
+                    <div className="mt-3 rounded-xl border border-line bg-surface/50 p-5">
+                        <p className="font-semibold text-ink">{project.paper.title}</p>
+                        <p className="mt-2 text-sm text-body">
                             {/* Highlight Amanda's name in the author list */}
                             {project.paper.authors.split(/(Amanda Elvarsdóttir\*?)/).map((part, i) =>
                                 part.startsWith("Amanda Elvarsdóttir") ? (
-                                    <strong key={i} className="font-semibold text-[#e5dbcb]">
+                                    <strong key={i} className="font-semibold text-accent">
                                         {part}
                                     </strong>
                                 ) : (
@@ -188,15 +188,15 @@ export default function ProjectDetail() {
                             )}
                         </p>
                         {project.paper.note && (
-                            <p className="mt-1 text-xs text-gray-500">{project.paper.note}</p>
+                            <p className="mt-1 text-xs text-faint">{project.paper.note}</p>
                         )}
-                        <p className="mt-1 text-sm italic text-gray-400">{project.paper.status}</p>
+                        <p className="mt-1 text-sm italic text-muted">{project.paper.status}</p>
                         {project.paper.url && (
                             <a
                                 href={project.paper.url}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="mt-4 inline-block rounded-md border border-neutral-700 px-4 py-2 text-sm font-semibold text-gray-200 transition hover:border-[#e5dbcb] hover:text-[#e5dbcb]"
+                                className="mt-4 inline-block rounded-md border border-line-strong px-4 py-2 text-sm font-semibold text-ink-2 transition hover:border-accent hover:text-accent"
                             >
                                 Read the paper (PDF) <span aria-hidden="true">↗</span>
                                 <span className="sr-only"> (opens in a new tab)</span>
@@ -209,21 +209,21 @@ export default function ProjectDetail() {
             {/* Previous / next */}
             <nav
                 aria-label="More projects"
-                className="mt-14 pt-6 border-t border-neutral-800 grid grid-cols-2 gap-4 text-sm"
+                className="mt-14 pt-6 border-t border-line grid grid-cols-2 gap-4 text-sm"
             >
                 <div>
                     {prev && (
                         <Link to={`/portfolio/${prev.id}`} className="group block">
-                            <span className="text-gray-500">← Previous</span>
-                            <span className="mt-1 block text-gray-200 group-hover:text-[#e5dbcb]">{prev.title}</span>
+                            <span className="text-faint">← Previous</span>
+                            <span className="mt-1 block text-ink-2 group-hover:text-accent">{prev.title}</span>
                         </Link>
                     )}
                 </div>
                 <div className="text-right">
                     {next && (
                         <Link to={`/portfolio/${next.id}`} className="group block">
-                            <span className="text-gray-500">Next →</span>
-                            <span className="mt-1 block text-gray-200 group-hover:text-[#e5dbcb]">{next.title}</span>
+                            <span className="text-faint">Next →</span>
+                            <span className="mt-1 block text-ink-2 group-hover:text-accent">{next.title}</span>
                         </Link>
                     )}
                 </div>

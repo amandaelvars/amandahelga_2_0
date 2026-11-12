@@ -9,7 +9,7 @@ export default function Loader({ visible }: LoaderProps) {
 
     return (
         <div
-            className="fixed inset-0 z-[100] grid place-items-center bg-neutral-950"
+            className="fixed inset-0 z-[100] grid place-items-center bg-page"
             role="status"
             aria-live="polite"
             aria-busy="true"

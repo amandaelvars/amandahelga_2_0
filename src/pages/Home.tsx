@@ -76,7 +76,7 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-4">
         <div
           ref={wrapRef}
-          className="relative w-full h-[40vh] md:h-[60vh] overflow-hidden rounded-xl mt-16"
+          className="relative w-full h-[40vh] md:h-[60vh] overflow-hidden rounded-xl mt-10 md:mt-16 shadow-media"
           aria-label="Hero"
         >
           {/* LAYER 1: BACKGROUND SKY (panning) */}

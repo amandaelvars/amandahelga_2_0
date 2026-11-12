@@ -34,8 +34,8 @@ export default function Portfolio() {
                                 className={[
                                     "px-3 py-1 rounded-full text-sm border transition",
                                     activeTag === tag
-                                        ? "border-[#e5dbcb] text-[#e5dbcb] bg-neutral-900"
-                                        : "border-neutral-800 text-gray-300 hover:border-neutral-700",
+                                        ? "border-accent text-accent bg-surface"
+                                        : "border-line text-body hover:border-line-strong",
                                 ].join(" ")}
                             >
                                 {tag}
@@ -44,10 +44,10 @@ export default function Portfolio() {
                     </div>
                 </header>
 
-                <hr className="my-6 border-neutral-800" />
+                <hr className="my-6 border-line" />
 
                 {projects.length === 0 ? (
-                    <p className="text-gray-400">No projects yet.</p>
+                    <p className="text-muted">No projects yet.</p>
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {filtered.map((p) => {
@@ -57,10 +57,10 @@ export default function Portfolio() {
                                 <Link
                                     key={p.id}
                                     to={`/portfolio/${p.id}`}
-                                    className="group flex flex-col bg-neutral-900/40 border border-neutral-800 rounded-xl overflow-hidden transition hover:border-neutral-600 hover:bg-neutral-900/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e5dbcb]"
+                                    className="group flex flex-col bg-surface/40 border border-line rounded-xl overflow-hidden transition hover:border-line-strong hover:bg-surface/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                                 >
                                     {/* 4:3 cover */}
-                                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-900">
+                                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-surface">
                                         {p.coverImage ? (
                                             <>
                                                 <img
@@ -72,7 +72,7 @@ export default function Portfolio() {
                                                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
                                             </>
                                         ) : (
-                                            <div className="w-full h-full grid place-items-center text-gray-500 text-sm">
+                                            <div className="w-full h-full grid place-items-center text-faint text-sm">
                                                 No image
                                             </div>
                                         )}
@@ -80,13 +80,13 @@ export default function Portfolio() {
 
                                     {/* Content */}
                                     <div className="flex flex-1 flex-col p-4">
-                                        <div className="text-xs text-gray-400">{p.dates}</div>
-                                        <h2 className="mt-1 font-semibold text-gray-100 group-hover:text-[#e5dbcb] transition-colors">
+                                        <div className="text-xs text-muted">{p.dates}</div>
+                                        <h2 className="mt-1 font-semibold text-ink group-hover:text-accent transition-colors">
                                             {p.title}
                                         </h2>
 
                                         {(p.tagline || p.summary) && (
-                                            <p className="mt-2 text-sm text-gray-300 line-clamp-2">
+                                            <p className="mt-2 text-sm text-body line-clamp-2">
                                                 {p.tagline ?? p.summary}
                                             </p>
                                         )}
@@ -96,20 +96,20 @@ export default function Portfolio() {
                                                 {tags.slice(0, MAX_CARD_TAGS).map((t) => (
                                                     <span
                                                         key={t}
-                                                        className="px-2 py-0.5 rounded-full text-xs border border-neutral-700 text-gray-300"
+                                                        className="px-2 py-0.5 rounded-full text-xs border border-line-strong text-body"
                                                     >
                                                         {t}
                                                     </span>
                                                 ))}
                                                 {extraTags > 0 && (
-                                                    <span className="px-2 py-0.5 text-xs text-gray-500">
+                                                    <span className="px-2 py-0.5 text-xs text-faint">
                                                         +{extraTags}
                                                     </span>
                                                 )}
                                             </div>
                                         )}
 
-                                        <span className="mt-auto pt-4 text-sm text-[#e5dbcb]">
+                                        <span className="mt-auto pt-4 text-sm text-accent">
                                             View project{" "}
                                             <span
                                                 aria-hidden="true"

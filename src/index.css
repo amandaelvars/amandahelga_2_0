@@ -1,19 +1,116 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
 
-@theme {
+/*
+  Theme colors.
+  Components use these names (bg-page, text-body, border-line, text-accent…)
+  instead of fixed colors, so the light/dark switch only changes the values below.
+*/
+@theme inline {
   --color-brand: #f47b20;
-  --font-display: "Boldonse" , system-ui; 
+  --font-display: "Boldonse", system-ui;
+
+  --color-page: var(--page);               /* page background */
+  --color-surface: var(--surface);         /* cards, inputs, chips */
+  --color-card-warm: var(--card-warm);     /* About Me card */
+  --color-ink: var(--ink);                 /* strongest text */
+  --color-ink-2: var(--ink-2);             /* headings, labels */
+  --color-body: var(--body);               /* paragraphs */
+  --color-muted: var(--muted);             /* secondary text, dates */
+  --color-faint: var(--faint);             /* small print */
+  --color-line: var(--line);               /* borders, dividers */
+  --color-line-strong: var(--line-strong); /* input and button borders */
+  --color-accent: var(--accent);           /* links, highlights, primary buttons */
+  --color-accent-hover: var(--accent-hover);
+  --color-on-accent: var(--on-accent);     /* text on accent buttons */
+  --color-gold: var(--gold);               /* small eyebrow labels */
+
+  --shadow-media: var(--media-shadow);     /* hero and tile images: shadow-media */
+}
+
+/* Dark (default) */
+:root {
+  color-scheme: dark;
+  --page: oklch(0.145 0 0);
+  --surface: oklch(0.205 0 0);
+  --card-warm: #15120f;
+  --ink: oklch(0.967 0.003 264.542);
+  --ink-2: oklch(0.928 0.006 264.531);
+  --body: oklch(0.872 0.01 258.338);
+  --muted: oklch(0.707 0.022 261.325);
+  --faint: oklch(0.551 0.027 264.364);
+  --line: oklch(0.269 0 0);
+  --line-strong: oklch(0.371 0 0);
+  --accent: #e5dbcb;
+  --accent-hover: #d6cdb8;
+  --on-accent: oklch(0.145 0 0);
+  --gold: #e8d157;
+  --media-shadow: 0 0 0 1px rgb(255 255 255 / 0.04);
+
+  /* Labels under the three home page tiles */
+  --label-researcher: #614f41;
+  --label-engineer: #838fa4;
+  --label-designer: #e8d157;
+
+  /* Resume skill colors, taken from the home page illustrations */
+  --skill-uiux: #f08a3a;      /* orange clouds */
+  --skill-dataviz: #e8d157;   /* mustard "WEB DESIGN" label */
+  --skill-hci: #8fa3c4;       /* slate sky */
+  --skill-rai: #e8b4a6;       /* pink houses */
+  --skill-ar: #7fb0c2;        /* steel teal water */
+  --skill-decision: #b58e70;  /* brown "RESEARCHER" label, lifted for dark */
+  --skill-research: #aaa3d6;  /* lavender fjord */
+  --skill-frontend: #8fb89c;  /* sage trees */
+  --skill-ink: #1c1917;       /* text on a filled skill chip */
+}
+
+/* Light: warm sand background, lighter paper cards, brown accent instead of cream */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --page: #f2ece3;
+  --surface: #faf7f2;
+  --card-warm: #ebe2d4;
+  --ink: #1c1917;
+  --ink-2: #292524;
+  --body: #44403c;
+  --muted: #655c53;
+  --faint: #716a64;
+  --line: #ddd3c5;
+  --line-strong: #c9bdac;
+  --accent: #7a5230;
+  --accent-hover: #5f3f24;
+  --on-accent: #faf7f2;
+  --gold: #866700;
+  --media-shadow:
+    0 1px 2px rgb(60 40 20 / 0.08),
+    0 14px 34px -14px rgb(60 40 20 / 0.35);
+
+  --label-researcher: #614f41;
+  --label-engineer: #5f6b80;
+  --label-designer: #b0961a;
+
+  /* Slightly deeper skill colors so they hold up on the sand background */
+  --skill-uiux: #e47a2b;
+  --skill-dataviz: #d4b43a;
+  --skill-hci: #7d93b8;
+  --skill-rai: #dc9f90;
+  --skill-ar: #5f97ad;
+  --skill-decision: #a57c5d;
+  --skill-research: #958dc9;
+  --skill-frontend: #78a585;
+  --skill-ink: #1c1917;
 }
 
 body {
-  @apply bg-neutral-950 text-gray-100;
+  @apply bg-page text-ink;
   margin: 0; /* prevents a white gap */
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .animate-spin { animation: none !important; }
   .transition-opacity { transition: none !important; }
+  body { transition: none; }
 }
 
 @keyframes spin-slow {
@@ -25,5 +122,3 @@ body {
 .animate-spin-slow {
   animation: spin-slow 3s linear infinite;
 }
-
-

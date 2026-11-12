@@ -35,7 +35,7 @@ export default function App() {
         <Navbar />
 
         {/* keep a consistent dark background site-wide */}
-        <main className="bg-neutral-950 text-gray-100 min-h-[calc(100vh-3.5rem)]">
+        <main className="bg-page text-ink min-h-[calc(100vh-3.5rem)]">
           <Routes>
             {/* Home (three-image layout) */}
             <Route path="/" element={<Home />} />

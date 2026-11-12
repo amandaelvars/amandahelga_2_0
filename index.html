@@ -6,6 +6,17 @@
   <link rel="icon" type="image/png" href="/logo/amandahelga_logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>amandahelga</title>
+  <!-- Apply the saved or system theme before the page paints, to avoid a flash -->
+  <script>
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem("theme"); } catch (e) {}
+      if (theme !== "light" && theme !== "dark") {
+        theme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      }
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
 </head>
 
 <body>
