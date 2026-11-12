@@ -1,14 +1,134 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
 
-@theme {
-  --color-brand: #f47b20;
-  --font-display: "Boldonse" , system-ui; 
+/*
+  Theme colors.
+  Components use these names (bg-page, text-body, border-line, text-accent…)
+  instead of fixed colors, so the light/dark switch only changes the values below.
+*/
+@theme inline {
+  --color-brand: var(--brand);            /* logo color: orange (dark), coral pink (light) */
+  --font-display: "Boldonse", system-ui;
+
+  --color-page: var(--page);               /* page background */
+  --color-surface: var(--surface);         /* cards, inputs, chips */
+  --color-card-warm: var(--card-warm);     /* About Me card */
+  --color-ink: var(--ink);                 /* strongest text */
+  --color-ink-2: var(--ink-2);             /* headings, labels */
+  --color-body: var(--body);               /* paragraphs */
+  --color-muted: var(--muted);             /* secondary text, dates */
+  --color-faint: var(--faint);             /* small print */
+  --color-line: var(--line);               /* borders, dividers */
+  --color-line-strong: var(--line-strong); /* input and button borders */
+  --color-accent: var(--accent);           /* links, highlights, primary buttons */
+  --color-accent-hover: var(--accent-hover);
+  --color-on-accent: var(--on-accent);     /* text on accent buttons */
+  --color-gold: var(--gold);               /* small eyebrow labels */
+
+  --shadow-media: var(--media-shadow);     /* hero and tile images: shadow-media */
+}
+
+/* Dark (default) */
+:root {
+  color-scheme: dark;
+  --page: oklch(0.145 0 0);
+  --surface: oklch(0.205 0 0);
+  --card-warm: #15120f;
+  --ink: oklch(0.967 0.003 264.542);
+  --ink-2: oklch(0.928 0.006 264.531);
+  --body: oklch(0.872 0.01 258.338);
+  --muted: oklch(0.707 0.022 261.325);
+  --faint: oklch(0.551 0.027 264.364);
+  --line: oklch(0.269 0 0);
+  --line-strong: oklch(0.371 0 0);
+  --accent: #e5dbcb;
+  --accent-hover: #d6cdb8;
+  --on-accent: oklch(0.145 0 0);
+  --gold: #e8d157;
+  --brand: #f47b20;
+  --media-shadow: 0 0 0 1px rgb(255 255 255 / 0.04);
+
+  /* Labels under the three home page tiles */
+  --label-researcher: #614f41;
+  --label-engineer: #838fa4;
+  --label-designer: #e8d157;
+
+  /* Resume skill colors, taken from the home page illustrations */
+  --skill-uiux: #f08a3a;      /* orange clouds */
+  --skill-dataviz: #e8d157;   /* mustard "WEB DESIGN" label */
+  --skill-hci: #8fa3c4;       /* slate sky */
+  --skill-rai: #e8b4a6;       /* pink houses */
+  --skill-ar: #7fb0c2;        /* steel teal water */
+  --skill-decision: #b58e70;  /* brown "RESEARCHER" label, lifted for dark */
+  --skill-research: #aaa3d6;  /* lavender fjord */
+  --skill-frontend: #8fb89c;  /* sage trees */
+  --skill-ink: #1c1917;       /* text on a filled skill chip */
+}
+
+/* Light: warm sand background, lighter paper cards, brown accent instead of cream */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --page: #f2ece3;
+  --surface: #faf7f2;
+  --card-warm: #ebe2d4;
+  --ink: #1c1917;
+  --ink-2: #292524;
+  --body: #44403c;
+  --muted: #655c53;
+  --faint: #716a64;
+  --line: #ddd3c5;
+  --line-strong: #c9bdac;
+  --accent: #7a5230;
+  --accent-hover: #5f3f24;
+  --on-accent: #faf7f2;
+  --gold: #866700;
+  --brand: #d9566b;
+  --media-shadow:
+    0 1px 2px rgb(60 40 20 / 0.08),
+    0 14px 34px -14px rgb(60 40 20 / 0.35);
+
+  --label-researcher: #614f41;
+  --label-engineer: #6b8560;   /* sage, matching the light tile */
+  --label-designer: #b0961a;
+
+  /* Skill colors taken from the light-mode art: sunset sky, coral clouds, sage tile */
+  --skill-uiux: #e46c84;      /* coral pink clouds */
+  --skill-dataviz: #d6a83e;   /* mustard "WEB DESIGN" label */
+  --skill-hci: #7894b6;       /* denim top of the sky */
+  --skill-rai: #f29a92;       /* peach edge of the clouds */
+  --skill-ar: #9d98cc;        /* periwinkle middle of the sky */
+  --skill-decision: #c97f62;  /* warm terracotta */
+  --skill-research: #bf8fab;  /* dusky mauve bottom of the sky */
+  --skill-frontend: #93ab7d;  /* sage "SOFTWARE ENGINEER" tile */
+  --skill-ink: #1c1917;
+}
+
+/*
+  "Dusk" palette for the About Me card in light mode, matching the pink clouds and
+  blue-to-pink sky in the light hero. Everything inside .tone-dusk that uses the
+  accent, gold or card colors picks these up automatically.
+*/
+:root[data-theme="light"] .tone-dusk {
+  --card-warm: #fbe3de;    /* pink-peach blush */
+  --accent: #a83e4b;       /* sunset coral pink: heading, buttons */
+  --accent-hover: #8c3240;
+  --on-accent: #fff7f4;
+  --gold: #ad4250;         /* coral pink: "ABOUT ME" label and glow */
 }
 
 body {
-  @apply bg-neutral-950 text-gray-100;
+  @apply bg-page text-ink;
   margin: 0; /* prevents a white gap */
+}
+
+/*
+  Theme-specific images (see ThemeImage.tsx and the hero in Home.tsx).
+  Both versions are always loaded; the one for the other theme is hidden, so
+  switching themes swaps pictures instantly, in step with the page colors.
+*/
+:root[data-theme="light"] .dark-only,
+:root:not([data-theme="light"]) .light-only {
+  visibility: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -25,5 +145,3 @@ body {
 .animate-spin-slow {
   animation: spin-slow 3s linear infinite;
 }
-
-

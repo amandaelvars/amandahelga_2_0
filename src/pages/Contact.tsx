@@ -2,15 +2,13 @@ import React from "react";
 
 export default function Contact() {
   return (
-    <main className="bg-neutral-950 text-gray-100">
-      {/* spacer for sticky navbar */}
-      <div className="h-14" />
+    <div>
 
       <div className="mx-auto max-w-3xl px-4 py-12">
-        <h1 className="text-3xl font-bold tracking-tight mb-6 text-[#e5dbcb]">
+        <h1 className="text-3xl font-bold tracking-tight mb-6 text-accent">
           Contact Me
         </h1>
-        <p className="mb-8 text-gray-300">
+        <p className="mb-8 text-body">
           Have a question or want to work together? Fill out the form below and I’ll get back to you.
         </p>
 
@@ -23,7 +21,7 @@ export default function Contact() {
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-gray-200 mb-1"
+              className="block text-sm font-medium text-ink-2 mb-1"
             >
               Name
             </label>
@@ -32,7 +30,7 @@ export default function Contact() {
               id="name"
               name="name"
               required
-              className="w-full rounded-md bg-neutral-900 border border-neutral-700 p-3 text-gray-100 focus:ring-2 focus:ring-[#e5dbcb] focus:border-transparent"
+              className="w-full rounded-md bg-surface border border-line-strong p-3 text-ink focus:ring-2 focus:ring-accent focus:border-transparent"
             />
           </div>
 
@@ -40,7 +38,7 @@ export default function Contact() {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-200 mb-1"
+              className="block text-sm font-medium text-ink-2 mb-1"
             >
               Email
             </label>
@@ -49,7 +47,7 @@ export default function Contact() {
               id="email"
               name="email"
               required
-              className="w-full rounded-md bg-neutral-900 border border-neutral-700 p-3 text-gray-100 focus:ring-2 focus:ring-[#e5dbcb] focus:border-transparent"
+              className="w-full rounded-md bg-surface border border-line-strong p-3 text-ink focus:ring-2 focus:ring-accent focus:border-transparent"
             />
           </div>
 
@@ -57,7 +55,7 @@ export default function Contact() {
           <div>
             <label
               htmlFor="message"
-              className="block text-sm font-medium text-gray-200 mb-1"
+              className="block text-sm font-medium text-ink-2 mb-1"
             >
               Message
             </label>
@@ -66,19 +64,19 @@ export default function Contact() {
               name="message"
               rows={5}
               required
-              className="w-full rounded-md bg-neutral-900 border border-neutral-700 p-3 text-gray-100 focus:ring-2 focus:ring-[#e5dbcb] focus:border-transparent"
+              className="w-full rounded-md bg-surface border border-line-strong p-3 text-ink focus:ring-2 focus:ring-accent focus:border-transparent"
             />
           </div>
 
           {/* Submit */}
           <button
             type="submit"
-            className="bg-[#e5dbcb] text-neutral-950 px-6 py-3 rounded-md font-semibold hover:bg-[#d6cdb8] transition"
+            className="bg-accent text-on-accent px-6 py-3 rounded-md font-semibold hover:bg-accent-hover transition"
           >
             Send Message
           </button>
         </form>
       </div>
-    </main>
+    </div>
   );
 }

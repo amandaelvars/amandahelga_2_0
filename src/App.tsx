@@ -6,6 +6,7 @@ import Loader from "./components/Loader";
 import Home from "./pages/Home";
 import Resume from "./pages/Resume";
 import Portfolio from "./pages/Portfolio";
+import ProjectDetail from "./pages/ProjectDetail";
 import Contact from "./pages/Contact";
 
 export default function App() {
@@ -34,7 +35,7 @@ export default function App() {
         <Navbar />
 
         {/* keep a consistent dark background site-wide */}
-        <main className="bg-neutral-950 text-gray-100 min-h-[calc(100vh-3.5rem)]">
+        <main className="bg-page text-ink min-h-[calc(100vh-3.5rem)]">
           <Routes>
             {/* Home (three-image layout) */}
             <Route path="/" element={<Home />} />
@@ -44,6 +45,7 @@ export default function App() {
 
             {/* Portfolio page */}
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/portfolio/:id" element={<ProjectDetail />} />
 
             {/* Contact page */}
             <Route path="/contact" element={<Contact />} />

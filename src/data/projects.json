@@ -1,8 +1,129 @@
 [
   {
+    "id": "contextual-ai-ar",
+    "title": "How Contextual Information in Physical Environments Shapes Decisions with AI",
+    "dates": "Accepted · IEEE AIxVR 2027",
+    "tagline": "An AR study of whether clues from the physical world help people tell when an AI is wrong.",
+    "stack": [
+      "Unity",
+      "Meta Quest 3",
+      "User study",
+      "Mixed methods"
+    ],
+    "summary": "AI assistants in augmented reality may advise people about parts of the physical world they can't see. In an AR visual-search study with 32 participants, we tested whether contextual information, such as how rare the target is or being able to inspect part of the scene, helps people make better decisions with fallible AI.",
+    "stats": [
+      {
+        "value": "32",
+        "label": "participants in a within-subjects AR study"
+      },
+      {
+        "value": "20,480",
+        "label": "planned trials across 16 blocks per person"
+      },
+      {
+        "value": "+9.5 pp",
+        "label": "AI-assisted accuracy with both context cues combined"
+      },
+      {
+        "value": "+40%",
+        "label": "longer decisions with AI when half the desk was visible"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "The question",
+        "paragraphs": [
+          "Imagine an AR assistant telling you a key is behind an object you can't see. You might know keys are rarely there, or see that the rest of the desk is empty. Those clues change how likely the claim is, but they can't confirm it.",
+          "We asked whether this kind of context helps people decide when to trust a fallible AI, or simply changes which answers they accept."
+        ]
+      },
+      {
+        "heading": "What we did",
+        "bullets": [
+          "Participants wore a Meta Quest 3 and judged whether a virtual key was present on a real desk that was fully or partly hidden behind a virtual divider.",
+          "We varied how often the key appeared (25% or 50% of trials) and how much of the desk was visible (none or the near half).",
+          "AI advice was simulated and 80% accurate, shown as spoken audio, an arrow in the scene, or an x-ray view through the divider; one condition had no AI.",
+          "We measured three things separately: overall accuracy, how selectively people followed correct versus incorrect advice, and decision time. Interviews and questionnaires added participants' own accounts."
+        ]
+      },
+      {
+        "heading": "What we found",
+        "bullets": [
+          "Combining both clues raised AI-assisted accuracy from 73.7% to 83.1%, but most of that gain came from which cases were left to judge, not from people using the AI better.",
+          "When keys were rare, people became more skeptical whenever the AI said \"Present\", for correct and incorrect suggestions alike.",
+          "Seeing part of the desk made decisions about 40% slower, with no detected improvement in telling right from wrong advice.",
+          "Participants described using the odds as a general strategy, and overriding the AI only when they could see evidence that proved it wrong."
+        ]
+      },
+      {
+        "heading": "Design implications",
+        "bullets": [
+          "Show whether an AI claim can currently be checked, separately from the AI's confidence.",
+          "Present how common the target is, the AI's track record and its current prediction as distinct cues.",
+          "When evaluating AR assistants, account for which decisions remain unresolved as the interface changes what people can see."
+        ]
+      }
+    ],
+    "bullets": [
+      "Co-first author with Omar Elgohary."
+    ],
+    "paper": {
+      "title": "How Contextual Information in Physical Environments Shapes Decisions with AI",
+      "authors": "Omar Elgohary*, Amanda Elvarsdóttir*, Vannessa Lee and Zhu-Tian Chen. University of Minnesota.",
+      "note": "*Equal contribution (co-first authors).",
+      "status": "Accepted to IEEE AIxVR 2027.",
+      "url": null
+    },
+    "coverImage": "/img/projects/contextual-ai-ar-teaser.webp",
+    "cardImage": "/img/projects/contextual-ai-ar.webp",
+    "coverCaption": "The three AI formats in the study: (A) spoken advice, (B) an arrow in the scene, and (C) an x-ray view through the divider.",
+    "links": {
+      "repo": null,
+      "demo": null,
+      "doc": null
+    },
+    "tags": [
+      "Research",
+      "HCI",
+      "AR",
+      "AI"
+    ]
+  },
+  {
+    "id": "aurora-vis",
+    "title": "Aurora Story: Tracing an Aurora From Solar Storm to Colored Sky",
+    "dates": "Spring 2026",
+    "tagline": "An interactive D3 story that follows an aurora from solar storm to colored sky.",
+    "stack": [
+      "React",
+      "D3.js",
+      "Vite",
+      "NOAA SWPC data"
+    ],
+    "summary": "A Data Visualization class project: an interactive scrollytelling page that follows an aurora from the Sun's solar wind, through Earth's magnetic field and storm indicators, to the colors it paints at different altitudes.",
+    "bullets": [
+      "Told the story in five chapters, from solar wind reaching Earth to auroras over time, built around the May 2024 geomagnetic storm.",
+      "Visualized NOAA space weather data with D3, including solar wind clusters by plasma density and temperature, magnetic field (Bz) direction, and the Kp index across stations and time.",
+      "Built an interactive atmosphere panel that scrolls through the aurora to show why its colors change with altitude.",
+      "Team project with Sudarsna Mukund, Fletcher Gornick and Sam Chea."
+    ],
+    "coverImage": "/img/projects/aurora-vis.webp",
+    "links": {
+      "repo": null,
+      "demo": "https://amandaelvars.github.io/aurora-vis/",
+      "doc": null
+    },
+    "tags": [
+      "Visualization",
+      "School Project",
+      "Front-end"
+    ]
+  },
+  {
     "id": "citation-ai-visualization",
     "title": "SourceLens: LLM-Based Assistant for Paper Reading",
-    "dates": "September 2025 – Present",
+    "dates": "Fall 2025",
+    "tagline": "An LLM-powered reading canvas that brings papers, citations and evidence together.",
     "stack": [
       "React",
       "Typescript",
@@ -19,7 +140,7 @@
       "Implemented the favorites system for saving papers users want to revisit later.",
       "Created the overview panel, allowing users to quickly browse all paper sections and jump directly to any chapter."
     ],
-    "coverImage": "/img/projects/citation-ai-preview.jpg",
+    "coverImage": "/img/projects/citation-ai-preview.webp",
     "links": {
       "repo": null,
       "demo": null,
@@ -36,7 +157,8 @@
   {
     "id": "chen-lab-page",
     "title": "Dr. Zhu-tian Chen’s Research Lab Website",
-    "dates": "May 2025 – Present",
+    "dates": "May 2025 – May 2026",
+    "tagline": "Set up and built the website for Dr. Chen's research lab at the University of Minnesota.",
     "stack": [
       "React",
       "Typescript",
@@ -48,7 +170,7 @@
       "Initiated and set up the website build for Dr. Chen's lab at the University of Minnesota.",
       "Literature reviews on decision-making theories and risk perception."
     ],
-    "coverImage": "/img/projects/zhutian-chen-page.png",
+    "coverImage": "/img/projects/zhutian-chen-page.webp",
     "links": {
       "repo": null,
       "demo": null,
@@ -61,8 +183,9 @@
   },
   {
     "id": "chen-lab",
-    "title": "Dr. Zhu-Tian Chen’s Research Lab",
-    "dates": "May 2025 – Present",
+    "title": "AI Reliance in Mobile vs. AR Environments",
+    "dates": "May 2025 – May 2026",
+    "tagline": "Research on how AR versus mobile interfaces shape decision-making and reliance on AI.",
     "stack": [
       "Research",
       "AR",
@@ -74,7 +197,7 @@
       "Lead experimental design on decision context, risk level, and interface modality.",
       "Literature reviews on decision-making theories and risk perception."
     ],
-    "coverImage": "/img/projects/ar_decisionmaking.jpg",
+    "coverImage": "/img/projects/ar_decisionmaking.webp",
     "links": {
       "repo": null,
       "demo": null,
@@ -88,19 +211,21 @@
   },
   {
     "id": "ar-juggling",
-    "title": "AR for Task Learning & Muscle Memory",
+    "title": "JugglAR: Mixed Reality for Task Learning & Muscle Memory",
     "dates": "Sep. 2024 – Jan. 2025",
+    "tagline": "A hand-tracked AR juggling trainer, and a user study testing whether the skill carries over to real balls.",
     "stack": [
-      "AR",
-      "HCI",
-      "Cognitive Science"
+      "Unity",
+      "Meta Quest 3",
+      "Hand tracking",
+      "User study"
     ],
-    "summary": "AR-based app for teaching juggling; measuring transfer from virtual to physical skill.",
+    "summary": "JugglAR is a hand-tracked augmented reality app for the Meta Quest 3 that lets beginners practice juggling with virtual balls whose speed and gravity can be adjusted. We ran a two-week study comparing people who learned with JugglAR against people who practiced only with real balls, to see whether muscle memory built in AR transfers to the physical task.",
     "bullets": [
       "Designed user study and instrumentation.",
       "Explored slowed-down virtual trajectories for motor learning."
     ],
-    "coverImage": "/img/projects/jugglar.png",
+    "coverImage": "/img/projects/jugglar.webp",
     "links": {
       "repo": null,
       "demo": null,
@@ -108,13 +233,81 @@
     },
     "tags": [
       "AR",
-      "Research"
-    ]
+      "Research",
+      "HCI"
+    ],
+    "stats": [
+      {
+        "value": "4 of 4",
+        "label": "AR-trained participants learned to juggle real balls"
+      },
+      {
+        "value": "2 of 4",
+        "label": "physical-only participants reached the same goal"
+      },
+      {
+        "value": "≤ 3",
+        "label": "sessions for every AR participant to succeed"
+      },
+      {
+        "value": "8",
+        "label": "novice participants over four sessions in two weeks"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "The problem",
+        "paragraphs": [
+          "Learning to juggle is frustrating at first. Beginners spend much of their practice time picking up dropped balls, and the pace makes it hard to follow three balls at once. Earlier systems either added visual feedback to a single real ball (Juggling 4.0) or trained in VR with handheld controllers (Juggling in VR), so neither practiced the real catching and throwing motions.",
+          "We wanted to find out whether practicing with your own hands in AR, at a slower and adjustable pace, builds muscle memory that carries over to real juggling."
+        ]
+      },
+      {
+        "heading": "What we built",
+        "bullets": [
+          "Built in Unity for the Meta Quest 3, using AR passthrough instead of full VR: early testing showed full immersion was more distracting for learning to juggle.",
+          "Catches use recorded hand poses and a closed-fist grip instead of the usual AR pinch gesture, so practice builds the same motion as catching a real ball.",
+          "A pinch grab is used only to hold the third ball for the first throw, which solves the hand tracker's trouble with two balls in one hand.",
+          "Ball speed and gravity can be adjusted, so learners can slow the pattern down while they learn it.",
+          "After a two-hour formative study, we added a tennis-ball catch sound to confirm catches outside the headset's narrow field of view, and improved tracking with more recorded and hand-modeled poses."
+        ]
+      },
+      {
+        "heading": "The study",
+        "paragraphs": [
+          "Eight people aged 23 to 29 with no juggling experience were split into an AR group and a physical-practice group. Both groups had four sessions over two weeks: a 30-minute first session with a 10-minute tutorial video, then three 20-minute practice sessions. The AR group alternated between JugglAR and real balls.",
+          "The goal was to complete a full three-ball juggling cycle on two separate occasions, which requires every ball to pass through both hands. We recorded the session and the exact time at which each participant reached it."
+        ]
+      },
+      {
+        "heading": "What we found",
+        "paragraphs": [
+          "All four AR participants learned to juggle real balls within three sessions, two of them during the very first session. In the physical group, two participants reached the goal, one regressed in the final session, and one felt overwhelmed and lost the motivation to continue.",
+          "AR participants said the app helped them understand the mechanics of juggling and build confidence. The main drawbacks were the headset's limited field of view, especially when looking up or catching with a hand out of view, and the lack of the feeling of catching a ball. With only eight participants, the results are promising rather than conclusive."
+        ]
+      },
+      {
+        "heading": "Next steps",
+        "bullets": [
+          "Haptic gloves to simulate the feel of a catch.",
+          "More control over speed, gravity and the number of balls, and a gamified version to test whether it improves motivation.",
+          "A follow-up study comparing AR-only training followed by real balls against switching between the two throughout."
+        ]
+      }
+    ],
+    "paper": {
+      "title": "JugglAR: Exploring Mixed Reality for Enhanced Task Learning and Muscle Memory Formation",
+      "authors": "Harshvardhan Chandirasekar*, Amanda Elvarsdóttir*, Anurag Purohit, Dylan Blundell and Zhu-Tian Chen. University of Minnesota.",
+      "status": "Manuscript submitted to ACM.",
+      "url": "/papers/Jugglar.pdf",
+      "note": "*Equal contribution (co-first authors)."
+    }
   },
   {
     "id": "graco-cloud",
     "title": "Graco — Cloud Migration",
     "dates": "May 2022 – Nov. 2023",
+    "tagline": "Migrated a legacy product to AEM Cloud, working with product managers on scope and rollout.",
     "stack": [
       "Java",
       "JavaScript",
@@ -125,7 +318,7 @@
     "bullets": [
       "Collaborated with product managers on scope & milestones."
     ],
-    "coverImage": "/img/projects/graco-migration.png",
+    "coverImage": "/img/projects/graco-migration.webp",
     "links": {
       "repo": null,
       "demo": null,
@@ -141,6 +334,7 @@
     "id": "modus-frontend",
     "title": "Modus — Web Application",
     "dates": "May 2021 – Aug. 2022",
+    "tagline": "Built pages for a platform that gives sales teams content, buyer engagement tools and on-demand learning.",
     "stack": [
       "HTML",
       "JavaScript",
@@ -151,7 +345,7 @@
     "bullets": [
       "Built user-facing pages, and fixed bugs."
     ],
-    "coverImage": "/img/projects/modus-project.png",
+    "coverImage": "/img/projects/modus-project.webp",
     "links": {
       "repo": null,
       "demo": null,

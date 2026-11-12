@@ -1,4 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import ThemeImage from "./ThemeImage";
 
 function SpacedLabel({
   text,
@@ -79,9 +81,8 @@ export default function About() {
     <>
       {/* --- 3 Tiles Section --- */}
       <section
-        id="about"
         ref={sectionRef}
-        className="mx-auto max-w-6xl px-4 mt-[12vh] md:mt-[16vh] py-16 md:py-20"
+        className="mx-auto max-w-6xl px-4 mt-10 md:mt-14 py-10 md:py-14"
         style={{
           opacity,
           transform: `translateY(${translateY}px)`,
@@ -95,46 +96,47 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Tile 1 */}
           <figure className="flex flex-col">
-            <div className="group relative aspect-square w-full overflow-hidden bg-neutral-900">
+            <div className="group relative aspect-square w-full overflow-hidden rounded-xl bg-surface shadow-media">
               <img
-                src="/img/researcher.png"
+                src="/img/researcher.webp"
                 alt="Researcher"
                 className="w-full h-full object-cover transition-transform duration-500"
                 loading="lazy"
               />
             </div>
             <figcaption className="mt-4 font-display leading-[1] [container-type:inline-size]">
-              <SpacedLabel text="RESEARCHER" color="#614f41" />
+              <SpacedLabel text="RESEARCHER" color="var(--label-researcher)" />
             </figcaption>
           </figure>
 
           {/* Tile 2 */}
           <figure className="flex flex-col">
-            <div className="group relative aspect-square w-full overflow-hidden bg-neutral-900">
-              <img
-                src="/img/software-engineer.png"
+            <div className="group relative aspect-square w-full overflow-hidden rounded-xl bg-surface shadow-media">
+              <ThemeImage
+                dark="/img/software-engineer.webp"
+                light="/img/software-engineer-light.webp"
                 alt="Software Engineer"
-                className="w-full h-full object-cover transition-transform duration-500"
+                className="h-full w-full"
                 loading="lazy"
               />
             </div>
             <figcaption className="mt-4 font-display leading-[1] [container-type:inline-size]">
-              <SpacedLabel text="SOFTWARE ENGINEER" color="#838fa4" />
+              <SpacedLabel text="SOFTWARE ENGINEER" color="var(--label-engineer)" />
             </figcaption>
           </figure>
 
           {/* Tile 3 */}
           <figure className="flex flex-col">
-            <div className="group relative aspect-square w-full overflow-hidden bg-neutral-900">
+            <div className="group relative aspect-square w-full overflow-hidden rounded-xl bg-surface shadow-media">
               <img
-                src="/img/web-designer.png"
+                src="/img/web-designer.webp"
                 alt="Web Design"
                 className="w-full h-full object-cover transition-transform duration-500"
                 loading="lazy"
               />
             </div>
             <figcaption className="mt-4 font-display leading-[1] [container-type:inline-size]">
-              <SpacedLabel text="WEB DESIGN" color="#e8d157" />
+              <SpacedLabel text="WEB DESIGN" color="var(--label-designer)" />
             </figcaption>
           </figure>
 
@@ -143,23 +145,102 @@ export default function About() {
         </div>
       </section>
 
-      {/* --- About Box Section --- */}
-      <section className="mx-auto max-w-3xl px-4 py-12 md:py-16 text-center">
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-[#e5dbcb] mb-4">
-          ABOUT ME
-        </h2>
-        <p className="text-gray-300 text-lg leading-relaxed mb-4">
-          I'm an Icelandic Graduate Student at the University of Minnesota,
-          pursuing a Master of Science in Computer Science. I hold a Bachelor of
-          Science with a major in Computer Science and a minor in Math from
-          Northern Michigan University. I am a natural problem solver with a
-          strong foundation in computer science, physics, and math. I fluently
-          speak both English and Icelandic.
-        </p>
-        <p className="text-gray-300 text-lg leading-relaxed">
-          If I'm not coding you can find me reading, stargazing, playing on my
-          Switch, drawing or running.
-        </p>
+      {/* --- About Me Section --- */}
+      <section id="about" className="scroll-mt-20 mx-auto max-w-6xl px-4 py-12 md:py-20">
+        <div className="tone-dusk relative overflow-hidden rounded-3xl border border-accent/10 bg-card-warm p-6 sm:p-10 md:p-12">
+          {/* Soft warm glows, using the tile label colors */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-32 -right-24 h-80 w-80 rounded-full bg-gold/15 blur-3xl"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-[#838fa4]/10 blur-3xl"
+          />
+
+          <div className="relative grid gap-10 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:items-center">
+            {/* Portrait */}
+            <div className="mx-auto w-full max-w-xs md:max-w-none">
+              <div className="overflow-hidden rounded-2xl border border-accent/15 shadow-2xl shadow-black/40">
+                <img
+                  src="/img/portrait.webp"
+                  alt="Amanda Elvarsdóttir"
+                  className="aspect-[4/5] w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Text */}
+            <div className="[container-type:inline-size]">
+              <p className="text-sm uppercase tracking-[0.25em] text-gold">About me</p>
+              {/* Scales with the text column so it fits on one line where there's room;
+                  on narrow screens it wraps onto two balanced lines */}
+              <h2 className="mt-3 font-display text-[clamp(1.5rem,4.7cqi,1.875rem)] leading-snug text-balance text-accent">
+                Where people meet technology
+              </h2>
+
+              <p className="mt-6 text-lg leading-relaxed text-body">
+                I'm an Icelandic software engineer with a Master of Science in
+                Computer Science from the University of Minnesota. I'm a natural
+                problem solver with a strong foundation in computer science,
+                physics and math.
+              </p>
+
+              {/* Quick facts */}
+              <dl className="mt-8 grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2">
+                {[
+                  { label: "Master's", value: "M.S. Computer Science, University of Minnesota, 2026" },
+                  { label: "Bachelor's", value: "B.S. Computer Science, minor in Math, Northern Michigan University, 2021" },
+                  { label: "From", value: "Akureyri, Iceland" },
+                  { label: "Languages", value: "English and Icelandic" },
+                ].map((f) => (
+                  <div key={f.label} className="border-l-2 border-accent/20 pl-4">
+                    <dt className="text-xs uppercase tracking-widest text-faint">{f.label}</dt>
+                    <dd className="mt-1 text-ink-2">{f.value}</dd>
+                  </div>
+                ))}
+              </dl>
+
+              {/* Hobbies */}
+              <div className="mt-8">
+                <p className="text-sm text-muted">When I'm not coding, you can find me</p>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {["Reading", "Stargazing", "Playing on my Switch", "Drawing", "Running"].map((h) => (
+                    <li
+                      key={h}
+                      className="rounded-full border border-accent/15 bg-ink/[0.03] px-3 py-1 text-sm text-ink-2"
+                    >
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Calls to action */}
+              <div className="mt-10 flex flex-wrap gap-3">
+                <Link
+                  to="/portfolio"
+                  className="rounded-md bg-accent px-5 py-2.5 font-semibold text-on-accent transition hover:bg-accent-hover"
+                >
+                  See my work
+                </Link>
+                <Link
+                  to="/resume"
+                  className="rounded-md border border-accent/30 px-5 py-2.5 font-semibold text-accent transition hover:border-accent"
+                >
+                  Resume
+                </Link>
+                <Link
+                  to="/contact"
+                  className="rounded-md px-5 py-2.5 font-semibold text-body transition hover:text-accent"
+                >
+                  Get in touch →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </>
   );
