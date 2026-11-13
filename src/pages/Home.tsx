@@ -17,7 +17,7 @@ export default function Home() {
     // ----- TUNABLES -----
     const PAN_SCALE = 2.0;                          // sky height vs wrapper
     const PROGRESS_RANGE = wrap.offsetHeight * 0.6; // page scroll px for full pan
-    const BOAT_TRAVEL_FRAC = 0.40;                  // fraction of wrapper width
+    const BOAT_TRAVEL_FRAC = 1.0;                   // fraction of wrapper width (1 = sails fully off the left edge)
     const BOAT_BASE_OFFSET_PX = 0;                  // nudge boat final position
     const CLOUD_TRAVEL_X = 460;                     // px clouds move right
     const CLOUD_TRAVEL_Y = -170;                     // px clouds move up (negative = up)
@@ -40,9 +40,13 @@ export default function Home() {
         const extra = bg.offsetHeight - wrap.offsetHeight;
         bg.style.transform = `translateY(${-progress * extra}px)`;
 
-        // 2) Sail the boat to the left
-        const maxBoatTravel = wrap.clientWidth * BOAT_TRAVEL_FRAC + BOAT_BASE_OFFSET_PX;
-        boatWrap.style.transform = `translateX(${-progress * maxBoatTravel}px)`;
+        // 2) Sail the boat to the left — keeps going until the hero has
+        //    scrolled out of view, by which point the boat has exited on the left.
+        const boatRange = wrap.offsetTop + wrap.offsetHeight;
+        const boatProgress = Math.min(Math.max(scroll / boatRange, 0), 1);
+        const maxBoatTravel =
+          wrap.clientWidth * BOAT_TRAVEL_FRAC + boatWrap.offsetWidth + BOAT_BASE_OFFSET_PX;
+        boatWrap.style.transform = `translateX(${-boatProgress * maxBoatTravel}px)`;
 
         // 3) Move the clouds up-right
         const cx = progress * CLOUD_TRAVEL_X;   // right
